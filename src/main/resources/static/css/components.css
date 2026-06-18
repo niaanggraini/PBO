@@ -228,6 +228,23 @@
 
 }
 
+.destination-btn{
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    background: var(--gradient-primary);
+
+    color: #FFFFFF;
+
+    text-decoration: none;
+
+}
 
 
 /* =====================

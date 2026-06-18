@@ -164,32 +164,21 @@ section {
 
 .logo {
 
-    font-size: 28px;
+    display: flex;
 
-    font-weight: 800;
-
-    letter-spacing: -.5px;
+    align-items: center;
 
 }
 
-.logo-green {
+.logo img {
 
-    color: #39BE9E;
+    height: 240px;
 
-}
+    width: auto;
 
-.logo-blue {
-
-    color: #0080D9;
+    display: block;
 
 }
-
-.logo-sky {
-
-    color: #54B8FF;
-
-}
-
 
 /* Menu */
 
