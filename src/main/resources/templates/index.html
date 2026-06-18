@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ARUNGI | Home</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/globals.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/layout.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/components.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/home.css}">
+
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <div th:replace="~{fragments/navbar :: navbar}">
+    </div>
+
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container">
+
+
+            <div class="hero-banner">
+
+                <img
+
+                th:src="@{/images/hero.jpg}"
+
+                alt="Hero Banner">
+
+
+                <div class="hero-overlay">
+
+                </div>
+
+
+
+                <div class="hero-content">
+
+
+                    <h1 class="hero-title">
+
+                        Explore Your Dream Journey
+
+                    </h1>
+
+
+                    <p class="hero-subtitle">
+
+                        Discover curated travel experiences
+
+                        across Indonesia and beyond.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <!-- Search Card -->
+
+            <div class="hero-search">
+
+                <div class="search-card">
+
+
+                    <div class="search-tabs">
+
+                        <button class="search-tab active">
+
+                            Domestic
+
+                        </button>
+
+
+                        <button class="search-tab">
+
+                            International
+
+                        </button>
+
+
+                    </div>
+
+
+
+
+                    <form class="search-form">
+
+
+                        <input
+
+                        class="input-field"
+
+                        type="text"
+
+                        placeholder="Where do you want to go?">
+
+
+
+                        <input
+
+                        class="input-field"
+
+                        type="date">
+
+
+
+                        <input
+
+                        class="input-field"
+
+                        type="date">
+
+
+
+                        <input
+
+                        class="input-field"
+
+                        type="text"
+
+                        placeholder="2 Adults">
+
+
+
+                        <button
+
+                        class="btn-primary">
+
+                            Search
+
+                        </button>
+
+
+
+                    </form>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- POPULAR DESTINATIONS -->
+
+    <section>
+
+        <div class="container">
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2 class="section-title">
+
+                        Popular Destinations
+
+                    </h2>
+
+
+                    <p class="section-subtitle">
+
+                        Discover the most loved destinations.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="destinations-grid">
+
+
+                <!-- Destination Card -->
+
+
+                <div class="destination-card">
+
+
+                    <div class="destination-image">
+
+                        <img
+
+                        th:src="@{/images/bali.jpg}"
+
+                        alt="Bali">
+
+                    </div>
+
+
+
+                    <div class="destination-content">
+
+
+                        <span class="destination-country">
+
+                            Indonesia
+
+                        </span>
+
+
+                        <h3 class="destination-title">
+
+                            Bali
+
+                        </h3>
+
+
+                        <div class="destination-footer">
+
+
+                            <div class="destination-price">
+
+                                Start From
+
+                                <strong>
+
+                                    Rp 1.500.000
+
+                                </strong>
+
+                            </div>
+
+
+
+                            <a
+
+                            th:href="@{/destinations}"
+
+                            class="btn-outline">
+
+                                Explore
+
+                            </a>
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- FOOTER -->
+
+    <div th:replace="~{fragments/footer :: footer}">
+    </div>
+
+
+</body>
+
+</html>

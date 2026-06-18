@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<nav class="navbar"
+     th:fragment="navbar">
+
+    <div class="container navbar-container">
+
+
+        <!-- Logo -->
+
+        <a th:href="@{/}"
+           class="logo">
+
+            <span class="logo-green">
+
+                A
+
+            </span>
+
+            <span class="logo-blue">
+
+                RUN
+
+            </span>
+
+            <span class="logo-sky">
+
+                GI
+
+            </span>
+
+        </a>
+
+
+
+        <!-- Menu -->
+
+        <ul class="nav-menu">
+
+            <li>
+
+                <a th:href="@{/}">
+
+                    Home
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a th:href="@{/destinations}">
+
+                    Destinations
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a th:href="@{/packages}">
+
+                    Packages
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="#">
+
+                    About
+
+                </a>
+
+            </li>
+
+        </ul>
+
+
+
+
+        <!-- Right Side -->
+
+        <div class="nav-actions">
+
+
+            <button>
+
+                🔍
+
+            </button>
+
+
+            <!-- Guest -->
+
+            <a th:href="@{/login}"
+
+               class="btn-outline">
+
+                Login
+
+            </a>
+
+
+            <a th:href="@{/register}"
+
+               class="btn-primary">
+
+                Register
+
+            </a>
+
+
+            <!--
+            Kalau udah login nanti ganti jadi:
+
+            Notification
+
+            Avatar
+
+            Dropdown:
+
+            My Bookings
+
+            Profile
+
+            Logout
+            -->
+
+
+        </div>
+
+
+    </div>
+
+</nav>
+
+</body>
+
+</html>

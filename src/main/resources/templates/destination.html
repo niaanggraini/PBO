@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ARUNGI | Destinations</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/globals.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/layout.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/components.css}">
+
+</head>
+
+<body>
+
+
+
+    <!-- NAVBAR -->
+
+    <div th:replace="~{fragments/navbar :: navbar}">
+    </div>
+
+
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+
+        <div class="container">
+
+
+            <h1 class="page-title">
+
+                Explore Destinations
+
+            </h1>
+
+
+
+            <p class="page-subtitle">
+
+                Discover breathtaking destinations
+
+                across Indonesia and around the world.
+
+            </p>
+
+
+
+            <div class="mt-5">
+
+                <input
+
+                type="text"
+
+                class="input-field"
+
+                placeholder="Search destination...">
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+    <!-- DESTINATION GRID -->
+
+    <section class="section-sm">
+
+
+        <div class="container">
+
+
+            <div class="destinations-grid">
+
+
+                <!-- Bali -->
+
+
+                <div class="destination-card">
+
+
+                    <div class="destination-image">
+
+                        <img
+
+                        th:src="@{/images/bali.jpg}"
+
+                        alt="Bali">
+
+                    </div>
+
+
+
+                    <div class="destination-content">
+
+
+                        <span class="destination-country">
+
+                            Indonesia
+
+                        </span>
+
+
+
+                        <h3 class="destination-title">
+
+                            Bali
+
+                        </h3>
+
+
+
+                        <p>
+
+                            Tropical paradise with beaches,
+
+                            temples, and vibrant culture.
+
+                        </p>
+
+
+
+                        <div class="destination-footer">
+
+
+                            <div class="destination-price">
+
+                                Rating
+
+                                <strong>
+
+                                    ⭐ 4.9
+
+                                </strong>
+
+                            </div>
+
+
+
+                            <a
+
+                            th:href="@{/packages}"
+
+                            class="btn-primary">
+
+                                Explore
+
+                            </a>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Tambah Raja Ampat -->
+
+                <!-- Tambah Lombok -->
+
+                <!-- Tambah Labuan Bajo -->
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+    <!-- FOOTER -->
+
+    <div th:replace="~{fragments/footer :: footer}">
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,516 @@
+/* ==========================================
+   ARUNGI - HOME CSS
+   Styling khusus Home Page
+========================================== */
+
+
+/* =====================
+   HERO
+===================== */
+
+.hero {
+
+    padding-top: 40px;
+
+    padding-bottom: 160px;
+
+    position: relative;
+
+}
+
+
+.hero-banner {
+
+    position: relative;
+
+    height: 620px;
+
+    border-radius: 32px;
+
+    overflow: hidden;
+
+}
+
+
+.hero-banner img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+
+            rgba(0,0,0,.15),
+
+            rgba(0,0,0,.45)
+
+        );
+
+}
+
+
+.hero-content {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 80px;
+
+    transform: translateY(-50%);
+
+    max-width: 650px;
+
+}
+
+
+.hero-title {
+
+    font-size: 72px;
+
+    font-weight: 800;
+
+    color: #FFFFFF;
+
+    line-height: 1.15;
+
+}
+
+
+.hero-subtitle {
+
+    font-size: 18px;
+
+    color: rgba(255,255,255,.9);
+
+    margin-top: 24px;
+
+    max-width: 520px;
+
+}
+
+
+
+/* =====================
+   FLOATING SEARCH CARD
+===================== */
+
+.hero-search {
+
+    position: absolute;
+
+    bottom: -90px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 200px);
+
+    max-width: 1240px;
+
+    z-index: 10;
+
+}
+
+
+.search-card {
+
+    background: #FFFFFF;
+
+    border-radius: 28px;
+
+    padding: 36px;
+
+    box-shadow:
+
+        0 20px 60px
+
+        rgba(15,23,42,.12);
+
+}
+
+
+.search-tabs {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+
+}
+
+
+.search-tab {
+
+    padding: 10px 22px;
+
+    border-radius: 999px;
+
+    background: var(--bg-secondary);
+
+    color: var(--text-secondary);
+
+    font-weight: 600;
+
+    transition: var(--transition);
+
+}
+
+
+.search-tab.active {
+
+    background:
+
+        rgba(57,190,158,.1);
+
+    color:
+
+        var(--primary);
+
+}
+
+
+.search-form {
+
+    display: grid;
+
+    grid-template-columns:
+
+        2fr
+
+        1fr
+
+        1fr
+
+        1fr
+
+        auto;
+
+    gap: 18px;
+
+}
+
+
+
+/* =====================
+   DESTINATIONS
+===================== */
+
+.destinations-grid {
+
+    margin-top: 50px;
+
+}
+
+
+.destination-card {
+
+    cursor: pointer;
+
+}
+
+
+.destination-country {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+}
+
+
+.destination-title {
+
+    margin-bottom: 18px;
+
+}
+
+
+
+/* =====================
+   FEATURED PACKAGES
+===================== */
+
+.packages-grid {
+
+    margin-top: 50px;
+
+}
+
+
+.package-card {
+
+    cursor: pointer;
+
+}
+
+
+.package-title {
+
+    line-height: 1.3;
+
+}
+
+
+
+/* =====================
+   WHY CHOOSE US
+===================== */
+
+.why-grid {
+
+    margin-top: 60px;
+
+}
+
+
+.feature-card {
+
+    border:
+
+        1px solid
+
+        rgba(229,231,235,.5);
+
+}
+
+
+.feature-icon {
+
+    transition: .3s;
+
+}
+
+
+.feature-card:hover .feature-icon {
+
+    transform:
+
+        scale(1.08);
+
+}
+
+
+
+/* =====================
+   TESTIMONIALS
+===================== */
+
+.testimonial-grid {
+
+    margin-top: 50px;
+
+}
+
+
+.testimonial-card {
+
+    border:
+
+        1px solid
+
+        rgba(229,231,235,.5);
+
+}
+
+
+.testimonial-rating {
+
+    font-size: 20px;
+
+}
+
+
+
+/* =====================
+   NEWSLETTER
+===================== */
+
+.newsletter {
+
+    margin-top: 30px;
+
+}
+
+
+.newsletter-form {
+
+    margin-top: 36px;
+
+}
+
+
+.newsletter-form .btn-primary {
+
+    min-width: 180px;
+
+}
+
+
+
+/* =====================
+   FOOTER
+===================== */
+
+.footer {
+
+    margin-top: 80px;
+
+}
+
+
+.footer-brand p {
+
+    margin-top: 24px;
+
+}
+
+
+.footer-bottom {
+
+    color:
+
+        var(--text-secondary);
+
+}
+
+
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+@media (max-width: 1200px){
+
+    .hero-content{
+
+        left: 50px;
+
+    }
+
+
+    .hero-title{
+
+        font-size: 56px;
+
+    }
+
+
+    .search-form{
+
+        grid-template-columns:
+
+            repeat(2,1fr);
+
+    }
+
+
+    .search-form .btn-primary{
+
+        grid-column:
+
+            span 2;
+
+    }
+
+}
+
+
+
+@media (max-width: 768px){
+
+    .hero{
+
+        padding-bottom: 240px;
+
+    }
+
+
+    .hero-banner{
+
+        height: 500px;
+
+    }
+
+
+    .hero-content{
+
+        left: 32px;
+
+        right: 32px;
+
+    }
+
+
+    .hero-title{
+
+        font-size: 42px;
+
+    }
+
+
+    .hero-subtitle{
+
+        font-size: 16px;
+
+    }
+
+
+    .hero-search{
+
+        width:
+
+            calc(100% - 48px);
+
+    }
+
+
+    .search-form{
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+
+    .search-form .btn-primary{
+
+        grid-column:
+
+            span 1;
+
+    }
+
+
+    .newsletter{
+
+        padding:
+
+            40px 24px;
+
+    }
+
+
+    .newsletter-title{
+
+        font-size: 32px;
+
+    }
+
+}
