@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ARUNGI | Payment</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/globals.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/layout.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/components.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/package.css}">
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<div th:replace="~{fragments/navbar :: navbar}">
+</div>
+
+
+
+
+<section class="package-detail">
+
+    <div class="container">
+
+
+        <div class="package-detail-layout">
+
+
+
+            <!-- LEFT -->
+
+            <div>
+
+
+                <div class="detail-section">
+
+                    <h2>
+
+                        Select Payment Method
+
+                    </h2>
+
+
+
+                    <!-- BANK -->
+
+                    <div class="review-card">
+
+                        <input
+
+                        type="radio"
+
+                        name="payment"
+
+                        checked>
+
+
+                        <strong>
+
+                            Bank Transfer
+
+                        </strong>
+
+
+                        <p>
+
+                            BCA, BNI, Mandiri
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- EWALLET -->
+
+                    <div
+
+                    class="review-card"
+
+                    style="margin-top:20px;">
+
+
+                        <input
+
+                        type="radio"
+
+                        name="payment">
+
+
+                        <strong>
+
+                            E-Wallet
+
+                        </strong>
+
+
+                        <p>
+
+                            GoPay, OVO, DANA
+
+                        </p>
+
+
+                    </div>
+
+
+
+
+
+                    <!-- CREDIT CARD -->
+
+                    <div
+
+                    class="review-card"
+
+                    style="margin-top:20px;">
+
+
+                        <input
+
+                        type="radio"
+
+                        name="payment">
+
+
+                        <strong>
+
+                            Credit Card
+
+                        </strong>
+
+
+                        <p>
+
+                            Visa, Mastercard
+
+                        </p>
+
+
+                    </div>
+
+
+
+
+
+                    <!-- Card Form -->
+
+                    <div class="detail-section">
+
+
+                        <h3>
+
+                            Payment Details
+
+                        </h3>
+
+
+
+                        <form class="booking-form">
+
+
+                            <label>
+
+                                Card Holder
+
+                            </label>
+
+                            <input
+
+                            class="input-field"
+
+                            type="text"
+
+                            placeholder="John Doe">
+
+
+
+
+
+                            <label>
+
+                                Card Number
+
+                            </label>
+
+                            <input
+
+                            class="input-field"
+
+                            type="text"
+
+                            placeholder="1234 5678 9012 3456">
+
+
+
+
+
+                            <label>
+
+                                Expiration Date
+
+                            </label>
+
+                            <input
+
+                            class="input-field"
+
+                            type="month">
+
+
+
+
+
+                            <label>
+
+                                CVV
+
+                            </label>
+
+                            <input
+
+                            class="input-field"
+
+                            type="password"
+
+                            placeholder="***">
+
+
+                        </form>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- RIGHT -->
+
+            <aside class="booking-card">
+
+
+                <h3>
+
+                    Booking Summary
+
+                </h3>
+
+
+
+
+                <div class="booking-item">
+
+                    <span>
+
+                        Package
+
+                    </span>
+
+
+                    <strong>
+
+                        Bali Adventure
+
+                    </strong>
+
+                </div>
+
+
+
+
+
+                <div class="booking-item">
+
+                    <span>
+
+                        Travelers
+
+                    </span>
+
+
+                    <strong>
+
+                        2 Persons
+
+                    </strong>
+
+                </div>
+
+
+
+
+
+                <div class="booking-item">
+
+                    <span>
+
+                        Departure
+
+                    </span>
+
+
+                    <strong>
+
+                        25 June 2026
+
+                    </strong>
+
+                </div>
+
+
+
+
+
+                <div class="booking-total">
+
+
+                    Total
+
+
+                    <strong>
+
+                        Rp 7.000.000
+
+                    </strong>
+
+
+                </div>
+
+
+
+
+
+                <button
+
+                class="btn-primary"
+
+                style="width:100%;
+                       margin-top:30px;">
+
+                    Confirm Payment
+
+                </button>
+
+
+
+
+                <p
+
+                style="margin-top:20px;
+                       text-align:center;
+                       color:var(--text-secondary);">
+
+
+                    Secure payment protected by SSL/TLS
+
+
+                </p>
+
+
+
+            </aside>
+
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- FOOTER -->
+
+<div th:replace="~{fragments/footer :: footer}">
+</div>
+
+
+
+</body>
+
+</html>

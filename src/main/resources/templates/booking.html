@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ARUNGI | Booking</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/globals.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/layout.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/components.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/package.css}">
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<div th:replace="~{fragments/navbar :: navbar}">
+</div>
+
+
+
+
+
+<section class="package-detail">
+
+    <div class="container">
+
+
+        <div class="package-detail-layout">
+
+
+
+            <!-- LEFT -->
+
+            <div>
+
+
+                <div class="detail-section">
+
+
+                    <h2>
+
+                        Traveler Information
+
+                    </h2>
+
+
+
+                    <form class="booking-form">
+
+
+                        <label>
+
+                            Full Name
+
+                        </label>
+
+                        <input
+
+                        type="text"
+
+                        class="input-field"
+
+                        placeholder="Enter your full name">
+
+
+
+
+
+                        <label>
+
+                            Email
+
+                        </label>
+
+                        <input
+
+                        type="email"
+
+                        class="input-field"
+
+                        placeholder="Enter your email">
+
+
+
+
+
+                        <label>
+
+                            Phone Number
+
+                        </label>
+
+                        <input
+
+                        type="text"
+
+                        class="input-field"
+
+                        placeholder="+62">
+
+
+
+
+
+                        <label>
+
+                            Departure Date
+
+                        </label>
+
+                        <input
+
+                        type="date"
+
+                        class="input-field">
+
+
+
+
+
+                        <label>
+
+                            Number of Travelers
+
+                        </label>
+
+                        <input
+
+                        type="number"
+
+                        class="input-field"
+
+                        value="2"
+
+                        min="1">
+
+
+
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- RIGHT -->
+
+            <aside class="booking-card">
+
+
+                <h3>
+
+                    Booking Summary
+
+                </h3>
+
+
+
+                <div class="booking-item">
+
+
+                    <span>
+
+                        Package
+
+                    </span>
+
+
+                    <strong>
+
+                        Bali Adventure
+
+                    </strong>
+
+
+                </div>
+
+
+
+
+                <div class="booking-item">
+
+
+                    <span>
+
+                        Duration
+
+                    </span>
+
+
+                    <strong>
+
+                        5 Days
+
+                    </strong>
+
+
+                </div>
+
+
+
+
+
+                <div class="booking-item">
+
+
+                    <span>
+
+                        Hotel
+
+                    </span>
+
+
+                    <strong>
+
+                        Grand Bali Resort
+
+                    </strong>
+
+
+                </div>
+
+
+
+
+
+                <div class="booking-item">
+
+
+                    <span>
+
+                        Transportation
+
+                    </span>
+
+
+                    <strong>
+
+                        Private Tour Bus
+
+                    </strong>
+
+
+                </div>
+
+
+
+
+
+                <div class="booking-total">
+
+
+                    Total
+
+
+                    <strong>
+
+                        Rp 7.000.000
+
+                    </strong>
+
+
+                </div>
+
+
+
+
+
+                <a
+
+                th:href="@{/payment}"
+
+                class="btn-primary"
+
+                style="width:100%;
+                       margin-top:30px;
+                       text-align:center;">
+
+                    Continue to Payment
+
+                </a>
+
+
+
+            </aside>
+
+
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- FOOTER -->
+
+<div th:replace="~{fragments/footer :: footer}">
+</div>
+
+
+</body>
+
+</html>
