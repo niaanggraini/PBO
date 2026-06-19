@@ -1,0 +1,312 @@
+/* ======================
+   PACKAGE PAGE
+====================== */
+
+.packages-section{
+
+    padding-bottom: 100px;
+
+}
+
+.packages-layout{
+
+    display: grid;
+
+    grid-template-columns:
+
+        280px 1fr;
+
+    gap: 40px;
+
+}
+
+
+
+/* ======================
+   FILTER
+====================== */
+
+.filter-panel{
+
+    background: #FFFFFF;
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    box-shadow: var(--shadow-sm);
+
+    height: fit-content;
+
+}
+
+.filter-title{
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    margin-bottom: 28px;
+
+}
+
+.filter-group{
+
+    margin-bottom: 32px;
+
+}
+
+.filter-label{
+
+    display: block;
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+
+}
+
+
+
+/* ======================
+   PACKAGE GRID
+====================== */
+
+.packages-grid{
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(2,1fr);
+
+    gap: 32px;
+
+}
+
+
+
+/* ======================
+   PACKAGE DETAIL
+====================== */
+
+.package-detail{
+
+    padding: 80px 0;
+
+}
+
+.package-detail-layout{
+
+    display: grid;
+
+    grid-template-columns:
+
+        2fr 400px;
+
+    gap: 50px;
+
+}
+
+
+
+/* Gallery */
+
+.gallery{
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+}
+
+.gallery img{
+
+    width: 100%;
+
+    height: 500px;
+
+    object-fit: cover;
+
+}
+
+
+
+/* Detail Section */
+
+.detail-section{
+
+    margin-top: 50px;
+
+}
+
+.detail-section h2{
+
+    margin-bottom: 20px;
+
+}
+
+.detail-section h3{
+
+    margin-bottom: 20px;
+
+}
+
+.detail-section p{
+
+    line-height: 1.8;
+
+}
+
+
+
+/* Timeline */
+
+.timeline{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+}
+
+.timeline-item{
+
+    background: #FFFFFF;
+
+    padding: 24px;
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+
+/* Review */
+
+.review-card{
+
+    background: #FFFFFF;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+
+
+/* Booking Card */
+
+.booking-card{
+
+    position: sticky;
+
+    top: 110px;
+
+    height: fit-content;
+
+    background: #FFFFFF;
+
+    padding: 36px;
+
+    border-radius: 24px;
+
+    box-shadow: var(--shadow-md);
+
+}
+
+.booking-price{
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+}
+
+.booking-form{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin-top: 32px;
+
+}
+
+.booking-total{
+
+    margin-top: 10px;
+
+    padding-top: 24px;
+
+    border-top:
+
+        1px solid
+
+        var(--border-color);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+.booking-total strong{
+
+    font-size: 24px;
+
+}
+
+
+
+/* Responsive */
+
+@media(max-width:1200px){
+
+    .packages-grid{
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+}
+
+
+@media(max-width:992px){
+
+    .packages-layout{
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+    .package-detail-layout{
+
+        grid-template-columns:
+
+            1fr;
+
+    }
+
+    .booking-card{
+
+        position: static;
+
+    }
+
+}

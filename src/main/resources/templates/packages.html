@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ARUNGI | Packages</title>
+
+
+    <link rel="stylesheet"
+          th:href="@{/css/globals.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/layout.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/components.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/package.css}">
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<div th:replace="~{fragments/navbar :: navbar}">
+</div>
+
+
+
+<!-- PAGE HEADER -->
+
+<section class="page-header">
+
+    <div class="container">
+
+
+        <h1 class="page-title">
+
+            Travel Packages
+
+        </h1>
+
+
+        <p class="page-subtitle">
+
+            Discover curated travel experiences
+            tailored for your next adventure.
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- PACKAGE SECTION -->
+
+<section class="packages-section">
+
+    <div class="container">
+
+
+        <div class="packages-layout">
+
+
+
+            <!-- FILTER -->
+
+            <aside class="filter-panel">
+
+
+                <h3 class="filter-title">
+
+                    Filters
+
+                </h3>
+
+
+
+                <!-- Destination -->
+
+                <div class="filter-group">
+
+                    <label class="filter-label">
+
+                        Destination
+
+                    </label>
+
+
+                    <select class="input-field">
+
+                        <option>
+
+                            All Destinations
+
+                        </option>
+
+                        <option>
+
+                            Bali
+
+                        </option>
+
+                        <option>
+
+                            Raja Ampat
+
+                        </option>
+
+                        <option>
+
+                            Lombok
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+
+                <!-- Duration -->
+
+                <div class="filter-group">
+
+                    <label class="filter-label">
+
+                        Duration
+
+                    </label>
+
+
+                    <select class="input-field">
+
+                        <option>
+
+                            Any
+
+                        </option>
+
+                        <option>
+
+                            3 Days
+
+                        </option>
+
+                        <option>
+
+                            5 Days
+
+                        </option>
+
+                        <option>
+
+                            7 Days
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+
+                <!-- Price -->
+
+                <div class="filter-group">
+
+                    <label class="filter-label">
+
+                        Price Range
+
+                    </label>
+
+
+                    <input
+
+                    type="range"
+
+                    min="1000000"
+
+                    max="10000000">
+
+                </div>
+
+
+
+            </aside>
+
+
+
+
+
+
+            <!-- PACKAGE LIST -->
+
+            <div class="packages-grid">
+
+
+
+                <!-- PACKAGE CARD -->
+
+                <div class="package-card">
+
+
+                    <div class="package-image">
+
+                        <img
+
+                        th:src="@{/images/bali.jpg}"
+
+                        alt="Bali">
+
+                    </div>
+
+
+
+                    <div class="package-content">
+
+
+                        <span class="package-location">
+
+                            Bali, Indonesia
+
+                        </span>
+
+
+
+                        <h3 class="package-title">
+
+                            Bali Adventure
+
+                        </h3>
+
+
+
+                        <div class="package-meta">
+
+
+                            <span>
+
+                                🕒 5 Days
+
+                            </span>
+
+
+                            <span>
+
+                                ⭐ 4.9
+
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="package-footer">
+
+
+                            <div class="package-price">
+
+
+                                <span>
+
+                                    Start From
+
+                                </span>
+
+
+                                <strong>
+
+                                    Rp 3.500.000
+
+                                </strong>
+
+
+                            </div>
+
+
+
+                            <a
+
+                            th:href="@{/packages/detail}"
+
+                            class="btn-primary">
+
+                                View Detail
+
+                            </a>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <!-- CARD 2 -->
+
+                <div class="package-card">
+
+
+                    <div class="package-image">
+
+                        <img
+
+                        th:src="@{/images/raja-ampat.jpg}"
+
+                        alt="Raja Ampat">
+
+                    </div>
+
+
+
+                    <div class="package-content">
+
+
+                        <span class="package-location">
+
+                            Raja Ampat, Indonesia
+
+                        </span>
+
+
+
+                        <h3 class="package-title">
+
+                            Raja Ampat Escape
+
+                        </h3>
+
+
+
+                        <div class="package-meta">
+
+
+                            <span>
+
+                                🕒 7 Days
+
+                            </span>
+
+
+                            <span>
+
+                                ⭐ 4.8
+
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="package-footer">
+
+
+                            <div class="package-price">
+
+
+                                <span>
+
+                                    Start From
+
+                                </span>
+
+
+                                <strong>
+
+                                    Rp 5.800.000
+
+                                </strong>
+
+
+                            </div>
+
+
+
+                            <a
+
+                            th:href="@{/packages/detail}"
+
+                            class="btn-primary">
+
+                                View Detail
+
+                            </a>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- CARD 3 -->
+
+                <div class="package-card">
+
+
+                    <div class="package-image">
+
+                        <img
+
+                        th:src="@{/images/lombok.jpg}"
+
+                        alt="Lombok">
+
+                    </div>
+
+
+
+                    <div class="package-content">
+
+
+                        <span class="package-location">
+
+                            Lombok, Indonesia
+
+                        </span>
+
+
+
+                        <h3 class="package-title">
+
+                            Lombok Paradise
+
+                        </h3>
+
+
+
+                        <div class="package-meta">
+
+
+                            <span>
+
+                                🕒 4 Days
+
+                            </span>
+
+
+                            <span>
+
+                                ⭐ 4.7
+
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div class="package-footer">
+
+
+                            <div class="package-price">
+
+
+                                <span>
+
+                                    Start From
+
+                                </span>
+
+
+                                <strong>
+
+                                    Rp 2.900.000
+
+                                </strong>
+
+
+                            </div>
+
+
+
+                            <a
+
+                            th:href="@{/packages/detail}"
+
+                            class="btn-primary">
+
+                                View Detail
+
+                            </a>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+<!-- FOOTER -->
+
+<div th:replace="~{fragments/footer :: footer}">
+</div>
+
+
+</body>
+
+</html>

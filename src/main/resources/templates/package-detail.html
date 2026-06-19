@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ARUNGI | Package Detail</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/globals.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/layout.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/components.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/package.css}">
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<div th:replace="~{fragments/navbar :: navbar}">
+</div>
+
+
+
+<!-- PACKAGE DETAIL -->
+
+<section class="package-detail">
+
+    <div class="container">
+
+
+        <div class="package-detail-layout">
+
+
+            <!-- LEFT -->
+
+            <div>
+
+
+                <!-- Gallery -->
+
+                <div class="gallery">
+
+                    <img
+
+                    th:src="@{/images/bali.jpg}"
+
+                    alt="Bali">
+
+                </div>
+
+
+
+                <!-- Description -->
+
+                <div class="detail-section">
+
+                    <h2>
+
+                        Bali Adventure
+
+                    </h2>
+
+
+                    <p>
+
+                        Experience the beauty of Bali with curated destinations,
+
+                        luxury accommodations, and unforgettable adventures.
+
+                    </p>
+
+                </div>
+
+
+
+
+                <!-- Itinerary -->
+
+                <div class="detail-section">
+
+                    <h3>
+
+                        Itinerary
+
+                    </h3>
+
+
+                    <div class="timeline">
+
+
+                        <div class="timeline-item">
+
+                            <strong>
+
+                                Day 1
+
+                            </strong>
+
+                            <p>
+
+                                Arrival & Uluwatu Temple
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <strong>
+
+                                Day 2
+
+                            </strong>
+
+                            <p>
+
+                                Nusa Penida Tour
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="timeline-item">
+
+                            <strong>
+
+                                Day 3
+
+                            </strong>
+
+                            <p>
+
+                                Water Sports & Sunset Dinner
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <!-- Hotel -->
+
+                <div class="detail-section">
+
+                    <h3>
+
+                        Hotel
+
+                    </h3>
+
+
+                    <p>
+
+                        ★★★★ Grand Bali Resort
+
+                    </p>
+
+
+                    <p>
+
+                        Breakfast Included
+
+                    </p>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- Transportation -->
+
+                <div class="detail-section">
+
+                    <h3>
+
+                        Transportation
+
+                    </h3>
+
+
+                    <p>
+
+                        Airport Pickup
+
+                    </p>
+
+
+                    <p>
+
+                        Private Tour Bus
+
+                    </p>
+
+
+                </div>
+
+
+
+
+
+
+                <!-- Reviews -->
+
+                <div class="detail-section">
+
+                    <h3>
+
+                        Reviews
+
+                    </h3>
+
+
+                    <div class="review-card">
+
+                        <strong>
+
+                            Sarah
+
+                        </strong>
+
+
+                        <p>
+
+                            ⭐⭐⭐⭐⭐
+
+                        </p>
+
+
+                        <p>
+
+                            Amazing trip and great itinerary!
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+            <!-- RIGHT -->
+
+            <aside class="booking-card">
+
+
+                <span class="booking-price">
+
+                    Rp 3.500.000
+
+                </span>
+
+
+                <p>
+
+                    per person
+
+                </p>
+
+
+
+
+                <div class="booking-form">
+
+
+                    <label>
+
+                        Departure Date
+
+                    </label>
+
+
+                    <input
+
+                    class="input-field"
+
+                    type="date">
+
+
+
+
+
+                    <label>
+
+                        Travelers
+
+                    </label>
+
+
+                    <input
+
+                    class="input-field"
+
+                    type="number"
+
+                    value="2"
+
+                    min="1">
+
+
+
+
+
+                    <div class="booking-total">
+
+
+                        Total
+
+                        <strong>
+
+                            Rp 7.000.000
+
+                        </strong>
+
+
+                    </div>
+
+
+
+
+
+                    <a
+
+                    th:href="@{/booking}"
+
+                    class="btn-primary">
+
+                        Book Now
+
+                    </a>
+
+
+                </div>
+
+
+            </aside>
+
+
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- FOOTER -->
+
+<div th:replace="~{fragments/footer :: footer}">
+</div>
+
+
+
+</body>
+
+</html>

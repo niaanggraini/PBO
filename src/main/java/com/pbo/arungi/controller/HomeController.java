@@ -30,6 +30,12 @@ public class HomeController {
 
     }
 
+    @GetMapping("/packages/detail")
+    public String packageDetail(){
+
+        return "package-detail";
+
+    }
 
     @GetMapping("/login")
     public String login(){
