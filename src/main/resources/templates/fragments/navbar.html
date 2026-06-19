@@ -12,11 +12,14 @@
 
         <!-- Logo -->
 
-        <a th:href="@{/}" class="logo">
+        <a th:href="@{/}"
+           class="logo">
 
-            <img src="/images/logonav.png" alt="ARUNGI Logo">
+            <img src="/images/logonav.png"
+                 alt="ARUNGI Logo">
 
         </a>
+
 
 
 
@@ -72,16 +75,22 @@
 
 
 
+
         <!-- Right Side -->
 
         <div class="nav-actions">
 
 
-            <button>
+            <!-- Search -->
 
-                🔍
+            <button class="nav-search-btn">
+
+                <i class="fa-solid fa-magnifying-glass">
+
+                </i>
 
             </button>
+
 
 
             <!-- Guest -->
@@ -104,22 +113,19 @@
             </a>
 
 
+
             <!--
-            Kalau udah login nanti ganti jadi:
+            Kalau udah login nanti:
 
-            Notification
+            <button class="nav-icon-btn">
 
-            Avatar
+                <i class="fa-regular fa-bell"></i>
 
-            Dropdown:
+            </button>
 
-            My Bookings
+            <img class="avatar">
 
-            Profile
-
-            Logout
             -->
-
 
         </div>
 
