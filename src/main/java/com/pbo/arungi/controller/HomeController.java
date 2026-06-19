@@ -52,4 +52,11 @@ public class HomeController {
 
     }
 
+    @GetMapping("/about")
+    public String about(){
+
+        return "about";
+
+    }
+
 }

@@ -770,3 +770,22 @@
         #EF4444;
 
 }
+
+.about-image{
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+.about-image img{
+
+    width: 250px;
+
+    height: auto;
+
+    object-fit: contain;
+
+}
