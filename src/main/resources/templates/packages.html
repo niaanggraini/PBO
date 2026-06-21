@@ -24,6 +24,10 @@
     <link rel="stylesheet"
           th:href="@{/css/package.css}">
 
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
 </head>
 
 <body>
@@ -56,8 +60,48 @@
 
         </p>
 
+        <!-- SEARCH SECTION -->
+    <div class="search-section">
+
+                <div class="search-wrapper">
+
+
+                    <div class="search-box">
+
+                        <i class="fa-solid fa-magnifying-glass search-icon">
+
+                        </i>
+
+
+                        <input
+
+                        type="text"
+
+                        class="search-input"
+
+                        placeholder="Search destination...">
+
+
+                    </div>
+
+
+
+
+                    <button class="btn-primary">
+
+                        Search
+
+                    </button>
+
+
+
+                </div>
+
+
 
     </div>
+
+    
 
 </section>
 
@@ -188,13 +232,24 @@
                     </label>
 
 
+                    <div class="price-range">
+
                     <input
 
-                    type="range"
+                        type="number"
 
-                    min="1000000"
+                        class="input-field"
 
-                    max="10000000">
+                        placeholder="Min">
+                    <input
+
+                        type="number"
+
+                        class="input-field"
+
+                        placeholder="Max">
+
+                </div>
 
                 </div>
 

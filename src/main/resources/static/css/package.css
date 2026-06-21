@@ -267,6 +267,43 @@
     font-size: 24px;
 
 }
+/* Price Range */
+.price-range{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+
+
+.price-range .input-field{
+
+    flex:1;
+
+}
+
+
+
+.price-range input::-webkit-outer-spin-button,
+
+.price-range input::-webkit-inner-spin-button{
+
+    -webkit-appearance:none;
+
+    margin:0;
+
+}
+
+
+
+.price-range input[type=number]{
+
+    appearance:textfield;
+
+}
+
 
 
 
@@ -310,3 +347,4 @@
     }
 
 }
+
