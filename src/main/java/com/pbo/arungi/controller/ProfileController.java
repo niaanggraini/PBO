@@ -5,17 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class PackageController {
+public class ProfileController {
 
-    @GetMapping("/packages")
-    public String packages() {
-
-        return "packages";
-    }
-
-    @GetMapping("/packages/detail")
-    public String packageDetail(
-            HttpSession session) {
+    @GetMapping("/profile")
+    public String profile(HttpSession session) {
 
         Boolean isLoggedIn =
                 (Boolean) session.getAttribute("isLoggedIn");
@@ -25,6 +18,6 @@ public class PackageController {
             return "redirect:/login";
         }
 
-        return "package-detail";
+        return "profile";
     }
 }

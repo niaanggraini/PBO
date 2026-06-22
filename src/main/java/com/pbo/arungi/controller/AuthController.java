@@ -1,5 +1,6 @@
 package com.pbo.arungi.controller;
 
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,7 @@ public class AuthController {
 
     @GetMapping("/login")
     public String login() {
+
         return "login";
     }
 
@@ -18,6 +20,7 @@ public class AuthController {
     public String processLogin(
             @RequestParam String email,
             @RequestParam String password,
+            HttpSession session,
             Model model) {
 
         if (email.isBlank() || password.isBlank()) {
@@ -36,14 +39,15 @@ public class AuthController {
             return "login";
         }
 
-        System.out.println("=== LOGIN ===");
-        System.out.println("Email : " + email);
+        session.setAttribute("isLoggedIn", true);
+        session.setAttribute("userEmail", email);
 
         return "redirect:/";
     }
 
     @GetMapping("/register")
     public String register() {
+
         return "register";
     }
 
@@ -82,13 +86,17 @@ public class AuthController {
             return "register";
         }
 
-        System.out.println("=== REGISTER ===");
-        System.out.println("Nama : " + fullName);
-        System.out.println("Email : " + email);
-
         model.addAttribute("success",
                 "Registrasi berhasil! Silakan login.");
 
         return "login";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+
+        session.invalidate();
+
+        return "redirect:/";
     }
 }
