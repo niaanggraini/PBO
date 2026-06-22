@@ -270,7 +270,8 @@
 
                 <!-- PACKAGE CARD -->
 
-                <div class="package-card">
+                <div class="package-card"
+                th:each="pkg : ${packages}">
 
 
                     <div class="package-image">
@@ -296,10 +297,8 @@
 
 
 
-                        <h3 class="package-title">
-
-                            Bali Adventure
-
+                        <h3 class="package-title"
+                            th:text="${pkg.name}">
                         </h3>
 
 
@@ -338,219 +337,8 @@
                                 </span>
 
 
-                                <strong>
-
-                                    Rp 3.500.000
-
-                                </strong>
-
-
-                            </div>
-
-
-
-                            <a
-
-                            th:href="@{/packages/detail}"
-
-                            class="btn-primary">
-
-                                View Detail
-
-                            </a>
-
-
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-
-                <!-- CARD 2 -->
-
-                <div class="package-card">
-
-
-                    <div class="package-image">
-
-                        <img
-
-                        th:src="@{/images/raja-ampat.jpg}"
-
-                        alt="Raja Ampat">
-
-                    </div>
-
-
-
-                    <div class="package-content">
-
-
-                        <span class="package-location">
-
-                            Raja Ampat, Indonesia
-
-                        </span>
-
-
-
-                        <h3 class="package-title">
-
-                            Raja Ampat Escape
-
-                        </h3>
-
-
-
-                        <div class="package-meta">
-
-
-                            <span>
-
-                                🕒 7 Days
-
-                            </span>
-
-
-                            <span>
-
-                                ⭐ 4.8
-
-                            </span>
-
-
-                        </div>
-
-
-
-                        <div class="package-footer">
-
-
-                            <div class="package-price">
-
-
-                                <span>
-
-                                    Start From
-
-                                </span>
-
-
-                                <strong>
-
-                                    Rp 5.800.000
-
-                                </strong>
-
-
-                            </div>
-
-
-
-                            <a
-
-                            th:href="@{/packages/detail}"
-
-                            class="btn-primary">
-
-                                View Detail
-
-                            </a>
-
-
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-
-
-                <!-- CARD 3 -->
-
-                <div class="package-card">
-
-
-                    <div class="package-image">
-
-                        <img
-
-                        th:src="@{/images/lombok.jpg}"
-
-                        alt="Lombok">
-
-                    </div>
-
-
-
-                    <div class="package-content">
-
-
-                        <span class="package-location">
-
-                            Lombok, Indonesia
-
-                        </span>
-
-
-
-                        <h3 class="package-title">
-
-                            Lombok Paradise
-
-                        </h3>
-
-
-
-                        <div class="package-meta">
-
-
-                            <span>
-
-                                🕒 4 Days
-
-                            </span>
-
-
-                            <span>
-
-                                ⭐ 4.7
-
-                            </span>
-
-
-                        </div>
-
-
-
-                        <div class="package-footer">
-
-
-                            <div class="package-price">
-
-
-                                <span>
-
-                                    Start From
-
-                                </span>
-
-
-                                <strong>
-
-                                    Rp 2.900.000
-
+                                <strong 
+                                th:text="'Rp ' + ${pkg.price}">
                                 </strong>
 
 
