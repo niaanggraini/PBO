@@ -325,3 +325,21 @@
     }
 
 }
+
+.error-message{
+    background:#ffe5e5;
+    color:#d63031;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.success-message{
+    background:#e8fff0;
+    color:#27ae60;
+    padding:12px;
+    border-radius:10px;
+    margin-bottom:15px;
+    text-align:center;
+}
