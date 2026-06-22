@@ -1,15 +1,85 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Profile</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ARUNGI | Profile</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/globals.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/layout.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/components.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/profile.css}">
+
 </head>
+
 <body>
 
-<div th:replace="~{fragments/navbar :: navbar}"></div>
+<div th:replace="~{fragments/navbar :: navbar}">
+</div>
 
-<h1>My Profile</h1>
+<section class="profile-section">
 
-<p>Welcome to your profile page.</p>
+    <div class="profile-card">
+
+        <div class="profile-avatar">
+
+            👤
+
+        </div>
+
+        <h1>
+
+            My Profile
+
+        </h1>
+
+        <p class="profile-email"
+           th:text="${email}">
+
+        </p>
+
+        <div class="profile-menu">
+
+            <a href="#"
+               class="profile-item">
+
+                My Bookings
+
+            </a>
+
+            <a href="#"
+               class="profile-item">
+
+                Account Settings
+
+            </a>
+
+            <a th:href="@{/logout}"
+               class="profile-item logout">
+
+                Logout
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 </body>
+
 </html>
