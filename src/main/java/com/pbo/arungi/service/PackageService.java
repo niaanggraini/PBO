@@ -22,4 +22,8 @@ public class PackageService {
     public void savePackage(TravelPackage travelPackage) {
         packageRepository.save(travelPackage);
     }
+
+    public TravelPackage getPackageById(Long id){
+    return packageRepository.findById(id).orElse(null);
+    }
 }

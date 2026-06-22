@@ -1,10 +1,12 @@
 package com.pbo.arungi.controller;
 
+import com.pbo.arungi.model.TravelPackage;
 import com.pbo.arungi.service.PackageService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class PackageController {
@@ -35,4 +37,27 @@ public class PackageController {
 
         return "package-detail";
     }
+
+    @GetMapping("/packages/detail/{id}")
+public String packageDetail(
+        @PathVariable Long id,
+        Model model,
+        HttpSession session) {
+
+    Boolean isLoggedIn =
+            (Boolean) session.getAttribute("isLoggedIn");
+
+    if (isLoggedIn == null || !isLoggedIn) {
+        return "redirect:/login";
+    }
+
+    TravelPackage travelPackage =
+            packageService.getPackageById(id);
+
+    model.addAttribute(
+            "packageData",
+            travelPackage);
+
+    return "package-detail";
+}
 }

@@ -68,20 +68,15 @@
 
                 <div class="detail-section">
 
-                    <h2>
-
-                        Bali Adventure
-
-                    </h2>
+                    <h2 th:text="${packageData.name}">
+</h2>
 
 
-                    <p>
-
-                        Experience the beauty of Bali with curated destinations,
-
-                        luxury accommodations, and unforgettable adventures.
-
-                    </p>
+                <p 
+                    
+                    th:text="${packageData.description}">
+                    
+                </p>
 
                 </div>
 
@@ -279,7 +274,9 @@
 
                 <span class="booking-price">
 
-                    Rp 3.500.000
+                    <strong 
+                    th:text="'Rp ' + ${packageData.price}">
+                    </strong>
 
                 </span>
 

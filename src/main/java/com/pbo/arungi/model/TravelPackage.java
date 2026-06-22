@@ -12,6 +12,7 @@ public class TravelPackage {
     private String name;
     private String description;
     private double price;
+    private String image;
 
     // Getter & Setter
     public Long getId() {
@@ -44,5 +45,13 @@ public class TravelPackage {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getImage() {
+    return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
