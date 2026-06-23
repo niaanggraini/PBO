@@ -20,7 +20,8 @@
     <link rel="stylesheet"
           th:href="@{/css/components.css}">
 
-    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          th:href="@{/css/package.css}">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -29,356 +30,207 @@
 
 <body>
 
+<!-- NAVBAR -->
+
+<div th:replace="~{fragments/navbar :: navbar}">
+</div>
 
 
-    <!-- NAVBAR -->
 
-    <div th:replace="~{fragments/navbar :: navbar}">
+
+
+<!-- PAGE HEADER -->
+
+<section class="page-header">
+
+    <div class="container">
+
+        <h1 class="page-title">
+            Explore Destinations
+        </h1>
+
+        <p class="page-subtitle">
+            Discover breathtaking destinations
+            across Indonesia and around the world.
+        </p>
+
+
+
+
+
+        <!-- SEARCH -->
+
+        <div class="search-section">
+
+            <form th:action="@{/destinations}"
+                  method="get"
+                  class="search-wrapper">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass search-icon">
+                    </i>
+
+                    <input
+                            type="text"
+                            name="keyword"
+                            class="search-input"
+                            placeholder="Search destination...">
+
+                </div>
+
+                <button type="submit"
+                        class="btn-primary">
+
+                    Search
+
+                </button>
+
+            </form>
+
+
+
+
+
+            <!-- FILTER -->
+
+            <div class="filter-wrapper">
+
+                <button class="filter-btn active">
+                    All Destinations
+                </button>
+
+                <button class="filter-btn">
+                    Coastal
+                </button>
+
+                <button class="filter-btn">
+                    Mountain
+                </button>
+
+                <button class="filter-btn">
+                    Cultural
+                </button>
+
+                <button class="filter-btn">
+                    Adventure
+                </button>
+
+                <button class="filter-btn">
+                    Island
+                </button>
+
+            </div>
+
+        </div>
+
     </div>
 
+</section>
 
 
 
 
-    <!-- PAGE HEADER -->
 
-    <section class="page-header">
+<!-- DESTINATIONS -->
+
+<section class="section-sm">
+
+    <div class="container">
+
+        <div class="destinations-grid">
+
+            <div class="destination-card"
+                 th:each="destination : ${destinations}">
+
+                <div class="destination-image">
+
+                    <img
+                            th:src="@{'/images/' + ${destination.image}}"
+                            th:alt="${destination.name}">
+
+                </div>
+
+                <div class="destination-content">
+
+                    <span class="destination-country"
+                          th:text="${destination.country}">
+
+                        Indonesia
+
+                    </span>
+
+                    <h3 class="destination-title"
+                        th:text="${destination.name}">
+
+                        Bali
+
+                    </h3>
+
+                    <p th:text="${destination.description}">
+
+                        Destination Description
+
+                    </p>
+
+                    <div class="destination-footer">
+
+                        <div class="destination-price">
+
+                            Start From
+
+                            <strong>
+
+                                Rp 1.500.000
+
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <a th:href="@{/packages(destination=${destination.name})}"
+                       class="btn-primary destination-btn">
+
+                        Explore
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
 
 
-        <div class="container">
-
-
-            <h1 class="page-title">
-
-                Explore Destinations
-
-            </h1>
 
 
 
-            <p class="page-subtitle">
+        <!-- EMPTY STATE -->
 
-                Discover breathtaking destinations
+        <div th:if="${#lists.isEmpty(destinations)}"
+             class="empty-state">
 
-                across Indonesia and around the world.
+            <h3>No destinations found</h3>
 
+            <p>
+                Try another keyword or add destinations to the database.
             </p>
 
-
-
-
-            <!-- SEARCH -->
-
-            <div class="search-section">
-
-                <div class="search-wrapper">
-
-
-                    <div class="search-box">
-
-                        <i class="fa-solid fa-magnifying-glass search-icon">
-
-                        </i>
-
-
-                        <input
-
-                        type="text"
-
-                        class="search-input"
-
-                        placeholder="Search destination...">
-
-
-                    </div>
-
-
-
-
-                    <button class="btn-primary">
-
-                        Search
-
-                    </button>
-
-
-
-                </div>
-
-
-
-
-                <!-- FILTER -->
-
-                <div class="filter-wrapper">
-
-
-                    <button class="filter-btn active">
-
-                        All Destinations
-
-                    </button>
-
-
-
-                    <button class="filter-btn">
-
-                        Coastal
-
-                    </button>
-
-
-
-                    <button class="filter-btn">
-
-                        Mountain
-
-                    </button>
-
-
-
-                    <button class="filter-btn">
-
-                        Cultural
-
-                    </button>
-
-
-
-                    <button class="filter-btn">
-
-                        Adventure
-
-                    </button>
-
-
-
-                    <button class="filter-btn">
-
-                        Island
-
-                    </button>
-
-
-                </div>
-
-
-            </div>
-
-
         </div>
 
-
-    </section>
-
-
-
-
-
-
-    <!-- DESTINATION GRID -->
-
-    <section class="section-sm">
-
-
-        <div class="container">
-
-
-            <div class="destinations-grid">
-
-
-
-                <!-- BALI -->
-
-                <div class="destination-card">
-
-
-                    <div class="destination-image">
-
-                        <img
-
-                        th:src="@{/images/bali.jpg}"
-
-                        alt="Bali">
-
-                    </div>
-
-
-
-                    <div class="destination-content">
-
-
-                        <span class="destination-country">
-
-                            Indonesia
-
-                        </span>
-
-
-
-                        <h3 class="destination-title">
-
-                            Bali
-
-                        </h3>
-
-
-
-                        <p>
-
-                            Tropical paradise with beaches,
-
-                            temples, and vibrant culture.
-
-                        </p>
-
-
-
-
-                        <div class="destination-footer">
-
-
-                            <div class="destination-price">
-
-                                Start From
-
-                                <strong>
-
-                                    Rp 1.500.000
-
-                                </strong>
-
-                            </div>
-
-
-                        </div>
-
-
-
-
-                        <a
-
-                        th:href="@{/packages}"
-
-                        class="btn-primary destination-btn">
-
-                            Explore
-
-                        </a>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-                <!-- RAJA AMPAT -->
-
-                <div class="destination-card">
-
-
-                    <div class="destination-image">
-
-                        <img
-
-                        th:src="@{/images/raja-ampat.jpg}"
-
-                        alt="Raja Ampat">
-
-                    </div>
-
-
-
-                    <div class="destination-content">
-
-
-                        <span class="destination-country">
-
-                            Indonesia
-
-                        </span>
-
-
-
-                        <h3 class="destination-title">
-
-                            Raja Ampat
-
-                        </h3>
-
-
-
-                        <p>
-
-                            Stunning islands with crystal clear
-
-                            waters and rich marine life.
-
-                        </p>
-
-
-
-
-                        <div class="destination-footer">
-
-
-                            <div class="destination-price">
-
-                                Start From
-
-                                <strong>
-
-                                    Rp 3.500.000
-
-                                </strong>
-
-                            </div>
-
-
-                        </div>
-
-
-
-
-                        <a
-
-                        th:href="@{/packages}"
-
-                        class="btn-primary destination-btn">
-
-                            Explore
-
-                        </a>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-
-
-    <!-- FOOTER -->
-
-    <div th:replace="~{fragments/footer :: footer}">
     </div>
 
+</section>
 
+
+
+
+
+<!-- FOOTER -->
+
+<div th:replace="~{fragments/footer :: footer}">
+</div>
 
 </body>
 

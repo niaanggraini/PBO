@@ -1,16 +1,28 @@
 package com.pbo.arungi.controller;
 
+import com.pbo.arungi.Repository.DestinationRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class DestinationController {
 
-    @GetMapping("/destinations")
-    public String destinations(){
+    private final DestinationRepository destinationRepository;
 
-        return "destinations";
+    public DestinationController(
+            DestinationRepository destinationRepository) {
 
+        this.destinationRepository = destinationRepository;
     }
 
+    @GetMapping("/destinations")
+    public String destinations(Model model) {
+
+        model.addAttribute(
+                "destinations",
+                destinationRepository.findAll());
+
+        return "destinations";
+    }
 }

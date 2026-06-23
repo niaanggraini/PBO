@@ -136,6 +136,10 @@
 
     transition: var(--transition);
 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
 }
 
 .destination-card:hover{
