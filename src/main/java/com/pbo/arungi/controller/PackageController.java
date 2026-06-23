@@ -1,7 +1,7 @@
 package com.pbo.arungi.controller;
 
-import com.pbo.arungi.model.TravelPackage;
-import com.pbo.arungi.service.PackageService;
+import com.pbo.arungi.Model.TravelPackage;
+import com.pbo.arungi.Service.PackageService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,6 +1,6 @@
-package com.pbo.arungi.repository;
+package com.pbo.arungi.Repository;
 
-import com.pbo.arungi.model.User;
+import com.pbo.arungi.Model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
