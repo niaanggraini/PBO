@@ -1,6 +1,6 @@
-package com.pbo.arungi.Repository;
+package com.pbo.arungi.repository;
 
-import com.pbo.arungi.Model.Destination;
+import com.pbo.arungi.model.Destination;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DestinationRepository

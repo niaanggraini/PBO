@@ -269,8 +269,11 @@
 
             <aside class="booking-card">
 
-
-            <span th:text="'Rp ' + ${packageData.price}"></span>
+            <span class="booking-price"
+                id="packagePrice"
+                th:data-price="${packageData.price}"
+                th:text="'Rp ' + ${packageData.price}">
+            </span>
 
             <p>
                 per person
@@ -307,14 +310,11 @@
 
 
                     <input
-
-                    class="input-field"
-
-                    type="number"
-
-                    value="2"
-
-                    min="1">
+                        class="input-field"
+                        type="number"
+                        id="travelerCount"
+                        value="1"
+                        min="1">
 
 
 
@@ -325,8 +325,8 @@
 
                         Total
 
-                        <strong
-                            th:text="'Rp ' + ${packageData.price}">
+                        <strong id="totalPrice">
+                            Rp 3.000.000
                         </strong>
 
 
@@ -371,6 +371,42 @@
 <div th:replace="~{fragments/footer :: footer}">
 </div>
 
+<script>
+
+const packagePrice =
+    Number(
+        document
+            .getElementById("packagePrice")
+            .dataset.price
+    );
+
+const travelerInput =
+    document.getElementById("travelerCount");
+
+const totalPrice =
+    document.getElementById("totalPrice");
+
+function updateTotal() {
+
+    const travelers =
+        Number(travelerInput.value);
+
+    const total =
+        packagePrice * travelers;
+
+    totalPrice.innerText =
+        "Rp " +
+        total.toLocaleString("id-ID");
+}
+
+travelerInput.addEventListener(
+    "input",
+    updateTotal
+);
+
+updateTotal();
+
+</script>
 
 
 </body>

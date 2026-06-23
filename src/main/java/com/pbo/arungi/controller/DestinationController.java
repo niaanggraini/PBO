@@ -1,6 +1,6 @@
 package com.pbo.arungi.controller;
 
-import com.pbo.arungi.Repository.DestinationRepository;
+import com.pbo.arungi.repository.DestinationRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
