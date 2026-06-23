@@ -1,5 +1,7 @@
 package com.pbo.arungi.controller;
 
+import com.pbo.arungi.model.User;
+import com.pbo.arungi.repository.UserRepository;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,8 +9,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Optional;
+
 @Controller
 public class AuthController {
+
+    private final UserRepository userRepository;
+
+    public AuthController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @GetMapping("/login")
     public String login() {
@@ -25,22 +35,43 @@ public class AuthController {
 
         if (email.isBlank() || password.isBlank()) {
 
-            model.addAttribute("error",
+            model.addAttribute(
+                    "error",
                     "Email dan Password wajib diisi!");
 
             return "login";
         }
 
-        if (password.length() < 8) {
+        Optional<User> userOptional =
+                userRepository.findByEmail(email);
 
-            model.addAttribute("error",
-                    "Password minimal 8 karakter!");
+        if (userOptional.isEmpty()) {
+
+            model.addAttribute(
+                    "error",
+                    "Email tidak terdaftar!");
 
             return "login";
         }
 
-        session.setAttribute("isLoggedIn", true);
-        session.setAttribute("userEmail", email);
+        User user = userOptional.get();
+
+        if (!user.getPassword().equals(password)) {
+
+            model.addAttribute(
+                    "error",
+                    "Password salah!");
+
+            return "login";
+        }
+
+        session.setAttribute(
+                "isLoggedIn",
+                true);
+
+        session.setAttribute(
+                "userEmail",
+                email);
 
         return "redirect:/";
     }
@@ -64,7 +95,8 @@ public class AuthController {
                 || password.isBlank()
                 || confirmPassword.isBlank()) {
 
-            model.addAttribute("error",
+            model.addAttribute(
+                    "error",
                     "Semua field wajib diisi!");
 
             return "register";
@@ -72,7 +104,8 @@ public class AuthController {
 
         if (password.length() < 8) {
 
-            model.addAttribute("error",
+            model.addAttribute(
+                    "error",
                     "Password minimal 8 karakter!");
 
             return "register";
@@ -80,20 +113,39 @@ public class AuthController {
 
         if (!password.equals(confirmPassword)) {
 
-            model.addAttribute("error",
+            model.addAttribute(
+                    "error",
                     "Password dan Confirm Password harus sama!");
 
             return "register";
         }
 
-        model.addAttribute("success",
+        if (userRepository.findByEmail(email).isPresent()) {
+
+            model.addAttribute(
+                    "error",
+                    "Email sudah terdaftar!");
+
+            return "register";
+        }
+
+        User user = new User(
+                fullName,
+                email,
+                password);
+
+        userRepository.save(user);
+
+        model.addAttribute(
+                "success",
                 "Registrasi berhasil! Silakan login.");
 
         return "login";
     }
 
     @GetMapping("/logout")
-    public String logout(HttpSession session) {
+    public String logout(
+            HttpSession session) {
 
         session.invalidate();
 

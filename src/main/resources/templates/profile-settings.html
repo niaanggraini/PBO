@@ -1,27 +1,30 @@
 <!DOCTYPE html>
+
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
-    <meta charset="UTF-8">
+```
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <title>ARUNGI | Account Settings</title>
+<title>ARUNGI | Account Settings</title>
 
-    <link rel="stylesheet"
-          th:href="@{/css/globals.css}">
+<link rel="stylesheet"
+      th:href="@{/css/globals.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/layout.css}">
+<link rel="stylesheet"
+      th:href="@{/css/layout.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/components.css}">
+<link rel="stylesheet"
+      th:href="@{/css/components.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/profile.css}">
+<link rel="stylesheet"
+      th:href="@{/css/profile.css}">
+```
 
 </head>
 
@@ -32,106 +35,116 @@
 
 <section class="profile-section">
 
-    <div class="profile-card">
+```
+<div class="profile-card">
 
-        <h1>
+    <h1>
+        Account Settings
+    </h1>
 
-            Account Settings
+    <br>
 
-        </h1>
+    <div th:if="${success}"
+         style="color:green;
+                font-weight:600;
+                margin-bottom:20px;">
 
-        <br>
+        <span th:text="${success}">
+        </span>
 
-        <div th:if="${success}"
-             style="color:green;
-                    font-weight:600;
-                    margin-bottom:20px;">
+    </div>
 
-            <span th:text="${success}">
-            </span>
+    <div th:if="${error}"
+         style="color:red;
+                font-weight:600;
+                margin-bottom:20px;">
+
+        <span th:text="${error}">
+        </span>
+
+    </div>
+
+    <form th:action="@{/profile/settings}"
+          method="post">
+
+        <div class="form-group">
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+                    type="text"
+                    name="fullName"
+                    class="input-field"
+                    th:value="${fullName}"
+                    required>
 
         </div>
 
-        <form th:action="@{/profile/settings}"
-              method="post">
+        <br>
 
-            <div class="form-group">
+        <div class="form-group">
 
-                <label>
+            <label>
+                Email
+            </label>
 
-                    Full Name
+            <input
+                    type="email"
+                    name="email"
+                    class="input-field"
+                    th:value="${email}"
+                    required>
 
-                </label>
+        </div>
 
-                <input
-                        type="text"
-                        class="input-field"
-                        value="Nia Anggraini">
+        <br>
 
-            </div>
+        <div class="form-group">
 
-            <br>
+            <label>
+                New Password
+            </label>
 
-            <div class="form-group">
+            <input
+                    type="password"
+                    name="password"
+                    class="input-field"
+                    placeholder="Enter new password">
 
-                <label>
+        </div>
 
-                    Email
+        <br>
 
-                </label>
+        <div class="form-group">
 
-                <input
-                        type="email"
-                        class="input-field"
-                        th:value="${email}">
+            <label>
+                Confirm Password
+            </label>
 
-            </div>
+            <input
+                    type="password"
+                    name="confirmPassword"
+                    class="input-field"
+                    placeholder="Confirm new password">
 
-            <br>
+        </div>
 
-            <div class="form-group">
+        <br>
 
-                <label>
+        <button
+                type="submit"
+                class="btn-primary">
 
-                    New Password
+            Save Changes
 
-                </label>
+        </button>
 
-                <input
-                        type="password"
-                        class="input-field">
+    </form>
 
-            </div>
-
-            <br>
-
-            <div class="form-group">
-
-                <label>
-
-                    Confirm Password
-
-                </label>
-
-                <input
-                        type="password"
-                        class="input-field">
-
-            </div>
-
-            <br>
-
-            <button
-                    type="submit"
-                    class="btn-primary">
-
-                Save Changes
-
-            </button>
-
-        </form>
-
-    </div>
+</div>
+```
 
 </section>
 
