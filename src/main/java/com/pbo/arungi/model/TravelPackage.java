@@ -48,10 +48,11 @@ public class TravelPackage {
     }
 
     public String getImage() {
-    return image;
+        return image;
     }
 
     public void setImage(String image) {
         this.image = image;
     }
+    
 }

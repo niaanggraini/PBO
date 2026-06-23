@@ -277,14 +277,10 @@
                     <div class="package-image">
 
                         <img
-
-                        th:src="@{/images/bali.jpg}"
-
-                        alt="Bali">
+                            th:src="@{/images/{img}(img=${pkg.image})}"
+                            alt="Image">
 
                     </div>
-
-
 
                     <div class="package-content">
 
@@ -337,8 +333,8 @@
                                 </span>
 
 
-                                <strong 
-                                th:text="'Rp ' + ${pkg.price}">
+                                <strong
+                                    th:text="'Rp ' + ${#numbers.formatInteger(pkg.price,0)}">
                                 </strong>
 
 

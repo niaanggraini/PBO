@@ -55,10 +55,8 @@
                 <div class="gallery">
 
                     <img
-
-                    th:src="@{/images/bali.jpg}"
-
-                    alt="Bali">
+                        th:src="@{/images/{img}(img=${packageData.image})}"
+                        alt="Package">
 
                 </div>
 
@@ -272,20 +270,11 @@
             <aside class="booking-card">
 
 
-                <span class="booking-price">
+            <span th:text="'Rp ' + ${packageData.price}"></span>
 
-                    <strong 
-                    th:text="'Rp ' + ${packageData.price}">
-                    </strong>
-
-                </span>
-
-
-                <p>
-
-                    per person
-
-                </p>
+            <p>
+                per person
+            </p>
 
 
 
@@ -336,10 +325,8 @@
 
                         Total
 
-                        <strong>
-
-                            Rp 7.000.000
-
+                        <strong
+                            th:text="'Rp ' + ${packageData.price}">
                         </strong>
 
 
