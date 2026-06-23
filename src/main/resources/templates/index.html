@@ -208,19 +208,17 @@
             <div class="destinations-grid">
 
 
-                <!-- Destination Card -->
-
-
-                <div class="destination-card">
+                <div class="destination-card"
+                     th:each="destination : ${destinations}">
 
 
                     <div class="destination-image">
 
                         <img
 
-                        th:src="@{/images/bali.jpg}"
+                        th:src="@{'/images/' + ${destination.image}}"
 
-                        alt="Bali">
+                        th:alt="${destination.name}">
 
                     </div>
 
@@ -229,49 +227,61 @@
                     <div class="destination-content">
 
 
-                        <span class="destination-country">
+                        <span class="destination-country"
+                              th:text="${destination.country}">
 
                             Indonesia
 
                         </span>
 
 
-                        <h3 class="destination-title">
+                        <h3 class="destination-title"
+                            th:text="${destination.name}">
 
                             Bali
 
                         </h3>
 
 
+                        <p th:text="${destination.description}">
+
+                            Description
+
+                        </p>
+
+
                         <div class="destination-footer">
 
                             <div class="destination-price">
 
-                                Start From
+                                Destination
 
                                 <strong>
-                                     Rp 1.500.000
+
+                                    Explore Now
 
                                 </strong>
 
                             </div>
-                        </div>
-
-                            <a
-
-                                th:href="@{/destinations}"
-
-                                class="btn-primary destination-btn">
-
-                                    Explore
-
-                            </a>
 
                         </div>
+
+
+                        <a
+
+                        th:href="@{/packages(destination=${destination.name})}"
+
+                        class="btn-primary destination-btn">
+
+                            Explore
+
+                        </a>
+
+
+                    </div>
 
 
                 </div>
-
 
 
             </div>

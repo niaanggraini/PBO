@@ -11,19 +11,39 @@ public class PackageService {
 
     private final PackageRepository packageRepository;
 
-    public PackageService(PackageRepository packageRepository) {
+    public PackageService(
+            PackageRepository packageRepository) {
+
         this.packageRepository = packageRepository;
     }
 
     public List<TravelPackage> getAllPackages() {
+
         return packageRepository.findAll();
+
     }
 
-    public void savePackage(TravelPackage travelPackage) {
+    public List<TravelPackage> getPackagesByDestination(
+            String destination) {
+
+        return packageRepository
+                .findByDestination(destination);
+
+    }
+
+    public void savePackage(
+            TravelPackage travelPackage) {
+
         packageRepository.save(travelPackage);
+
     }
 
-    public TravelPackage getPackageById(Long id){
-    return packageRepository.findById(id).orElse(null);
+    public TravelPackage getPackageById(
+            Long id) {
+
+        return packageRepository
+                .findById(id)
+                .orElse(null);
+
     }
 }

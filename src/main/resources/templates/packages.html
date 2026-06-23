@@ -51,6 +51,11 @@
 
             Travel Packages
 
+            <span
+                th:if="${selectedDestination != null}"
+                th:text="' - ' + ${selectedDestination}">
+            </span>
+
         </h1>
 
 

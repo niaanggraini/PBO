@@ -5,33 +5,69 @@ import com.pbo.arungi.Service.PackageService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class PackageController {
 
     private final PackageService packageService;
 
-    public PackageController(PackageService packageService) {
+    public PackageController(
+            PackageService packageService) {
+
         this.packageService = packageService;
     }
 
     @GetMapping("/packages")
-    public String packages(Model model) {
+    public String packages(
 
-        model.addAttribute("packages", packageService.getAllPackages());
+            @RequestParam(required = false)
+            String destination,
+
+            Model model) {
+
+        List<TravelPackage> packages;
+
+        if (destination != null &&
+                !destination.isBlank()) {
+
+            packages =
+                    packageService
+                    .getPackagesByDestination(
+                            destination);
+
+            model.addAttribute(
+                    "selectedDestination",
+                    destination);
+
+        } else {
+
+            packages =
+                    packageService
+                    .getAllPackages();
+
+        }
+
+        model.addAttribute(
+                "packages",
+                packages);
 
         return "packages";
     }
 
     @GetMapping("/packages/detail")
-    public String packageDetail(HttpSession session) {
+    public String packageDetail(
+            HttpSession session) {
 
         Boolean isLoggedIn =
-                (Boolean) session.getAttribute("isLoggedIn");
+                (Boolean) session.getAttribute(
+                        "isLoggedIn");
 
-        if (isLoggedIn == null || !isLoggedIn) {
+        if (isLoggedIn == null ||
+                !isLoggedIn) {
+
             return "redirect:/login";
         }
 
@@ -39,25 +75,33 @@ public class PackageController {
     }
 
     @GetMapping("/packages/detail/{id}")
-public String packageDetail(
-        @PathVariable Long id,
-        Model model,
-        HttpSession session) {
+    public String packageDetail(
 
-    Boolean isLoggedIn =
-            (Boolean) session.getAttribute("isLoggedIn");
+            @PathVariable Long id,
 
-    if (isLoggedIn == null || !isLoggedIn) {
-        return "redirect:/login";
+            Model model,
+
+            HttpSession session) {
+
+        Boolean isLoggedIn =
+                (Boolean) session.getAttribute(
+                        "isLoggedIn");
+
+        if (isLoggedIn == null ||
+                !isLoggedIn) {
+
+            return "redirect:/login";
+        }
+
+        TravelPackage travelPackage =
+                packageService
+                        .getPackageById(id);
+
+        model.addAttribute(
+                "packageData",
+                travelPackage);
+
+        return "package-detail";
     }
 
-    TravelPackage travelPackage =
-            packageService.getPackageById(id);
-
-    model.addAttribute(
-            "packageData",
-            travelPackage);
-
-    return "package-detail";
-}
 }

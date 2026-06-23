@@ -10,11 +10,18 @@ public class TravelPackage {
     private Long id;
 
     private String name;
+
+    private String destination;
+
     private String description;
+
     private double price;
+
     private String image;
 
-    // Getter & Setter
+    public TravelPackage() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -29,6 +36,14 @@ public class TravelPackage {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
     }
 
     public String getDescription() {
@@ -54,5 +69,4 @@ public class TravelPackage {
     public void setImage(String image) {
         this.image = image;
     }
-    
 }
