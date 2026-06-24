@@ -21,6 +21,8 @@ public class TravelPackage {
 
     private int duration;
 
+    private double rating;
+
     private String packageType;
 
     public TravelPackage() {
@@ -88,6 +90,14 @@ public class TravelPackage {
 
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
     
 }
