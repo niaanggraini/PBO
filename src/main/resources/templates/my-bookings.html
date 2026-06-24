@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARUNGI | My Bookings</title>
+    <link rel="stylesheet" th:href="@{/css/globals.css}">
+    <link rel="stylesheet" th:href="@{/css/layout.css}">
+    <link rel="stylesheet" th:href="@{/css/components.css}">
+    <link rel="stylesheet" th:href="@{/css/package.css}">
+</head>
+
+<body>
+
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<section class="package-detail">
+    <div class="container">
+        <div class="detail-section">
+            <h2>My Bookings</h2>
+
+            <div th:if="${#lists.isEmpty(bookings)}" class="review-card">
+                <p>You do not have any bookings yet.</p>
+                <a th:href="@{/packages}" class="btn-primary" style="display:inline-block; margin-top:20px;">
+                    Browse Packages
+                </a>
+            </div>
+
+            <div class="packages-grid" th:if="${!#lists.isEmpty(bookings)}">
+
+                <div class="review-card" th:each="booking : ${bookings}">
+
+                    <p style="color:var(--text-secondary); font-size:0.85rem; margin-bottom:6px;">
+                        <strong>Booking #<span th:text="${booking.id}">0</span></strong>
+                    </p>
+
+                    <h3 th:text="${booking.travelPackage.name}">Package Name</h3>
+
+                    <p>
+                        <strong>Departure:</strong>
+                        <span th:text="${#temporals.format(booking.departureDate, 'dd MMMM yyyy')}">Date</span>
+                    </p>
+
+                    <p>
+                        <strong>Travelers:</strong>
+                        <span th:text="${booking.travelers}">1</span>
+                    </p>
+
+                    <p>
+                        <strong>Total:</strong>
+                        <span th:text="'Rp ' + ${#numbers.formatInteger(booking.totalPrice,0)}">Rp 0</span>
+                    </p>
+
+                    <p>
+                        <strong>Status:</strong>
+                        <span th:text="${booking.status}"
+                              th:style="${booking.status == 'PAID'} ? 'color:green; font-weight:600;' :
+                                        (${booking.status == 'WAITING_PAYMENT'} ? 'color:orange; font-weight:600;' :
+                                        'color:red; font-weight:600;')">
+                            Status
+                        </span>
+                    </p>
+
+                    <a th:if="${booking.status == 'WAITING_PAYMENT'}"
+                       th:href="@{/payment/{id}(id=${booking.id})}"
+                       class="btn-primary"
+                       style="display:inline-block; margin-top:20px;">
+                        Pay Now
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>
