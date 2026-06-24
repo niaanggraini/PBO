@@ -19,6 +19,8 @@ public class TravelPackage {
 
     private String image;
 
+    private int duration;
+
     public TravelPackage() {
     }
 
@@ -68,5 +70,13 @@ public class TravelPackage {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public int getDuration() {
+    return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 }

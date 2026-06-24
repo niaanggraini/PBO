@@ -20,42 +20,40 @@ public class PackageController {
         this.packageService = packageService;
     }
 
-    @GetMapping("/packages")
-    public String packages(
+@GetMapping("/packages")
+public String packages(
 
-            @RequestParam(required = false)
-            String destination,
+        @RequestParam(required = false)
+        String destination,
 
-            Model model) {
+        @RequestParam(required = false)
+        Integer duration,
 
-        List<TravelPackage> packages;
+        @RequestParam(required = false)
+        Double minPrice,
 
-        if (destination != null &&
-                !destination.isBlank()) {
+        @RequestParam(required = false)
+        Double maxPrice,
 
-            packages =
-                    packageService
-                    .getPackagesByDestination(
-                            destination);
+        Model model) {
 
-            model.addAttribute(
-                    "selectedDestination",
-                    destination);
+    List<TravelPackage> packages =
+            packageService.filterPackages(
+                    destination,
+                    duration,
+                    minPrice,
+                    maxPrice);
 
-        } else {
+    model.addAttribute(
+            "packages",
+            packages);
 
-            packages =
-                    packageService
-                    .getAllPackages();
+    model.addAttribute(
+            "selectedDestination",
+            destination);
 
-        }
-
-        model.addAttribute(
-                "packages",
-                packages);
-
-        return "packages";
-    }
+    return "packages";
+}
 
     @GetMapping("/packages/detail")
     public String packageDetail(
@@ -103,5 +101,7 @@ public class PackageController {
 
         return "package-detail";
     }
+
+    
 
 }

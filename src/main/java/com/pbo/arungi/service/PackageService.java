@@ -46,4 +46,22 @@ public class PackageService {
                 .orElse(null);
 
     }
+
+    public List<TravelPackage> filterPackages(
+
+        String destination,
+
+        Integer duration,
+
+        Double minPrice,
+
+        Double maxPrice){
+
+    return packageRepository
+            .filterPackages(
+                    destination,
+                    duration,
+                    minPrice,
+                    maxPrice);
+}
 }

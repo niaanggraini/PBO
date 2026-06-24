@@ -131,132 +131,118 @@
 
 
                 <h3 class="filter-title">
+    Filters
+</h3>
 
-                    Filters
+<form th:action="@{/packages}" method="get">
 
-                </h3>
+    <!-- Destination -->
 
+    <div class="filter-group">
 
+        <label class="filter-label">
+            Destination
+        </label>
 
-                <!-- Destination -->
+        <select
+            name="destination"
+            class="input-field">
 
-                <div class="filter-group">
+            <option value="">
+                All Destinations
+            </option>
 
-                    <label class="filter-label">
+            <option value="Bali">
+                Bali
+            </option>
 
-                        Destination
+            <option value="Raja Ampat">
+                Raja Ampat
+            </option>
 
-                    </label>
+            <option value="Lombok">
+                Lombok
+            </option>
 
+            <option value="Labuan Bajo">
+                Labuan Bajo
+            </option>
 
-                    <select class="input-field">
+        </select>
 
-                        <option>
+    </div>
 
-                            All Destinations
+    <!-- Duration -->
 
-                        </option>
+    <div class="filter-group">
 
-                        <option>
+        <label class="filter-label">
+            Duration
+        </label>
 
-                            Bali
+        <select
+            name="duration"
+            class="input-field">
 
-                        </option>
+            <option value="">
+                Any
+            </option>
 
-                        <option>
+            <option value="3">
+                3 Days
+            </option>
 
-                            Raja Ampat
+            <option value="4">
+                4 Days
+            </option>
 
-                        </option>
+            <option value="5">
+                5 Days
+            </option>
 
-                        <option>
+            <option value="7">
+                7 Days
+            </option>
 
-                            Lombok
+        </select>
 
-                        </option>
+    </div>
 
-                    </select>
+    <!-- Price -->
 
-                </div>
+    <div class="filter-group">
 
+        <label class="filter-label">
+            Price Range
+        </label>
 
+        <div class="price-range">
 
+            <input
+                type="number"
+                name="minPrice"
+                class="input-field"
+                placeholder="Min">
 
-                <!-- Duration -->
+            <input
+                type="number"
+                name="maxPrice"
+                class="input-field"
+                placeholder="Max">
 
-                <div class="filter-group">
+        </div>
 
-                    <label class="filter-label">
+    </div>
 
-                        Duration
+    <button
+        type="submit"
+        class="btn-primary">
 
-                    </label>
+        Apply Filter
 
+    </button>
 
-                    <select class="input-field">
-
-                        <option>
-
-                            Any
-
-                        </option>
-
-                        <option>
-
-                            3 Days
-
-                        </option>
-
-                        <option>
-
-                            5 Days
-
-                        </option>
-
-                        <option>
-
-                            7 Days
-
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-
-
-                <!-- Price -->
-
-                <div class="filter-group">
-
-                    <label class="filter-label">
-
-                        Price Range
-
-                    </label>
-
-
-                    <div class="price-range">
-
-                    <input
-
-                        type="number"
-
-                        class="input-field"
-
-                        placeholder="Min">
-                    <input
-
-                        type="number"
-
-                        class="input-field"
-
-                        placeholder="Max">
-
-                </div>
-
-                </div>
+</form>
 
 
 
@@ -307,10 +293,8 @@
                         <div class="package-meta">
 
 
-                            <span>
-
-                                🕒 5 Days
-
+                            <span
+                                th:text="'🕒 ' + ${pkg.duration} + ' Days'">
                             </span>
 
 
