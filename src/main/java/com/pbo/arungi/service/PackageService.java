@@ -1,7 +1,7 @@
-package com.pbo.arungi.Service;
+package com.pbo.arungi.service;
 
-import com.pbo.arungi.Model.TravelPackage;
-import com.pbo.arungi.Repository.PackageRepository;
+import com.pbo.arungi.model.TravelPackage;
+import com.pbo.arungi.repository.PackageRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

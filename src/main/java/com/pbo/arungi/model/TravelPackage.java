@@ -1,4 +1,4 @@
-package com.pbo.arungi.Model;
+package com.pbo.arungi.model;
 
 import jakarta.persistence.*;
 

@@ -1,7 +1,7 @@
 package com.pbo.arungi.controller;
 
-import com.pbo.arungi.Model.User;
-import com.pbo.arungi.Repository.UserRepository;
+import com.pbo.arungi.model.User;
+import com.pbo.arungi.repository.UserRepository;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
