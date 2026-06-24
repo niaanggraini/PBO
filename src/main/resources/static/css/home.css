@@ -51,13 +51,9 @@
 
     background:
 
-        linear-gradient(
+        linear-gradient(rgba(0, 0, 0, .15),
 
-            rgba(0,0,0,.15),
-
-            rgba(0,0,0,.45)
-
-        );
+            rgba(0, 0, 0, .45));
 
 }
 
@@ -94,7 +90,7 @@
 
     font-size: 18px;
 
-    color: rgba(255,255,255,.9);
+    color: rgba(255, 255, 255, .9);
 
     margin-top: 24px;
 
@@ -137,14 +133,12 @@
 
     box-shadow:
 
-        0 20px 60px
-
-        rgba(15,23,42,.12);
+        0 20px 60px rgba(15, 23, 42, .12);
 
 }
 
 
-.search-tabs{
+.search-tabs {
 
     display: flex;
 
@@ -156,7 +150,7 @@
 
 
 
-.search-tab{
+.search-tab {
 
     padding: 12px 24px;
 
@@ -180,21 +174,19 @@
 
 
 
-.search-tab:hover{
+.search-tab:hover {
 
     transform: translateY(-2px);
 
     box-shadow:
 
-        0 8px 24px
-
-        rgba(0,0,0,.06);
+        0 8px 24px rgba(0, 0, 0, .06);
 
 }
 
 
 
-.search-tab.active{
+.search-tab.active {
 
     background: var(--gradient-primary);
 
@@ -202,9 +194,7 @@
 
     box-shadow:
 
-        0 8px 24px
-
-        rgba(13,146,120,.25);
+        0 8px 24px rgba(13, 146, 120, .25);
 
 }
 
@@ -215,15 +205,7 @@
 
     grid-template-columns:
 
-        2fr
-
-        1fr
-
-        1fr
-
-        1fr
-
-        auto;
+        2fr 1fr 1fr 1fr auto;
 
     gap: 18px;
 
@@ -307,9 +289,7 @@
 
     border:
 
-        1px solid
-
-        rgba(229,231,235,.5);
+        1px solid rgba(229, 231, 235, .5);
 
 }
 
@@ -346,9 +326,7 @@
 
     border:
 
-        1px solid
-
-        rgba(229,231,235,.5);
+        1px solid rgba(229, 231, 235, .5);
 
 }
 
@@ -419,32 +397,32 @@
    RESPONSIVE
 ===================== */
 
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
 
-    .hero-content{
+    .hero-content {
 
         left: 50px;
 
     }
 
 
-    .hero-title{
+    .hero-title {
 
         font-size: 56px;
 
     }
 
 
-    .search-form{
+    .search-form {
 
         grid-template-columns:
 
-            repeat(2,1fr);
+            repeat(2, 1fr);
 
     }
 
 
-    .search-form .btn-primary{
+    .search-form .btn-primary {
 
         grid-column:
 
@@ -456,23 +434,23 @@
 
 
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-    .hero{
+    .hero {
 
         padding-bottom: 240px;
 
     }
 
 
-    .hero-banner{
+    .hero-banner {
 
         height: 500px;
 
     }
 
 
-    .hero-content{
+    .hero-content {
 
         left: 32px;
 
@@ -481,21 +459,21 @@
     }
 
 
-    .hero-title{
+    .hero-title {
 
         font-size: 42px;
 
     }
 
 
-    .hero-subtitle{
+    .hero-subtitle {
 
         font-size: 16px;
 
     }
 
 
-    .hero-search{
+    .hero-search {
 
         width:
 
@@ -504,7 +482,7 @@
     }
 
 
-    .search-form{
+    .search-form {
 
         grid-template-columns:
 
@@ -513,7 +491,7 @@
     }
 
 
-    .search-form .btn-primary{
+    .search-form .btn-primary {
 
         grid-column:
 
@@ -522,7 +500,7 @@
     }
 
 
-    .newsletter{
+    .newsletter {
 
         padding:
 
@@ -531,7 +509,7 @@
     }
 
 
-    .newsletter-title{
+    .newsletter-title {
 
         font-size: 32px;
 

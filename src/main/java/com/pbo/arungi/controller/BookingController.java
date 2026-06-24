@@ -25,7 +25,8 @@ public class BookingController {
     private final PackageService packageService;
     private final UserRepository userRepository;
 
-    public BookingController(BookingService bookingService, PackageService packageService, UserRepository userRepository) {
+    public BookingController(BookingService bookingService, PackageService packageService,
+            UserRepository userRepository) {
         this.bookingService = bookingService;
         this.packageService = packageService;
         this.userRepository = userRepository;
@@ -39,10 +40,12 @@ public class BookingController {
     @GetMapping("/booking/{packageId}")
     public String bookingForm(@PathVariable Long packageId, HttpSession session, Model model) {
         Optional<User> userOptional = getLoggedInUser(session);
-        if (userOptional.isEmpty()) return "redirect:/login";
+        if (userOptional.isEmpty())
+            return "redirect:/login";
 
         TravelPackage travelPackage = packageService.getPackageById(packageId);
-        if (travelPackage == null) return "redirect:/packages";
+        if (travelPackage == null)
+            return "redirect:/packages";
 
         model.addAttribute("packageData", travelPackage);
         model.addAttribute("fullName", userOptional.get().getFullName());
@@ -61,10 +64,12 @@ public class BookingController {
             HttpSession session, Model model) {
 
         Optional<User> userOptional = getLoggedInUser(session);
-        if (userOptional.isEmpty()) return "redirect:/login";
+        if (userOptional.isEmpty())
+            return "redirect:/login";
 
         TravelPackage travelPackage = packageService.getPackageById(packageId);
-        if (travelPackage == null) return "redirect:/packages";
+        if (travelPackage == null)
+            return "redirect:/packages";
 
         if (fullName.isBlank() || email.isBlank() || phoneNumber.isBlank() || departureDate == null || travelers < 1) {
             model.addAttribute("packageData", travelPackage);
@@ -85,7 +90,8 @@ public class BookingController {
     @GetMapping("/my-bookings")
     public String myBookings(HttpSession session, Model model) {
         Optional<User> userOptional = getLoggedInUser(session);
-        if (userOptional.isEmpty()) return "redirect:/login";
+        if (userOptional.isEmpty())
+            return "redirect:/login";
 
         model.addAttribute("bookings", bookingService.getBookingsByUser(userOptional.get()));
         return "my-bookings";
@@ -93,9 +99,11 @@ public class BookingController {
 
     private Optional<User> getLoggedInUser(HttpSession session) {
         Boolean isLoggedIn = (Boolean) session.getAttribute("isLoggedIn");
-        if (isLoggedIn == null || !isLoggedIn) return Optional.empty();
+        if (isLoggedIn == null || !isLoggedIn)
+            return Optional.empty();
         String email = (String) session.getAttribute("userEmail");
-        if (email == null || email.isBlank()) return Optional.empty();
+        if (email == null || email.isBlank())
+            return Optional.empty();
         return userRepository.findByEmail(email);
     }
 }

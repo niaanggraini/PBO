@@ -1,422 +1,401 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ARUNGI | Package Detail</title>
 
-    <link rel="stylesheet"
-          th:href="@{/css/globals.css}">
+    <link rel="stylesheet" th:href="@{/css/globals.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/layout.css}">
+    <link rel="stylesheet" th:href="@{/css/layout.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/components.css}">
+    <link rel="stylesheet" th:href="@{/css/components.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/package.css}">
+    <link rel="stylesheet" th:href="@{/css/package.css}">
 
 </head>
 
 <body>
 
 
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
 
-<div th:replace="~{fragments/navbar :: navbar}">
-</div>
-
-
-
-<!-- PACKAGE DETAIL -->
-
-<section class="package-detail">
-
-    <div class="container">
-
-
-        <div class="package-detail-layout">
-
-
-            <!-- LEFT -->
-
-            <div>
-
-
-                <!-- Gallery -->
-
-                <div class="gallery">
-
-                    <img
-                        th:src="@{/images/{img}(img=${packageData.image})}"
-                        alt="Package">
-
-                </div>
+    <div th:replace="~{fragments/navbar :: navbar}">
+    </div>
 
 
 
-                <!-- Description -->
+    <!-- PACKAGE DETAIL -->
 
-                <div class="detail-section">
+    <section class="package-detail">
 
-                    <h2 th:text="${packageData.name}">
-</h2>
-
-
-                <p 
-                    
-                    th:text="${packageData.description}">
-                    
-                </p>
-
-                </div>
+        <div class="container">
 
 
+            <div class="package-detail-layout">
 
 
-                <!-- Itinerary -->
+                <!-- LEFT -->
 
-                <div class="detail-section">
-
-                    <h3>
-
-                        Itinerary
-
-                    </h3>
+                <div>
 
 
-                    <div class="timeline">
+                    <!-- Gallery -->
 
+                    <div class="gallery">
 
-                        <div class="timeline-item">
-
-                            <strong>
-
-                                Day 1
-
-                            </strong>
-
-                            <p>
-
-                                Arrival & Uluwatu Temple
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="timeline-item">
-
-                            <strong>
-
-                                Day 2
-
-                            </strong>
-
-                            <p>
-
-                                Nusa Penida Tour
-
-                            </p>
-
-                        </div>
-
-
-                        <div class="timeline-item">
-
-                            <strong>
-
-                                Day 3
-
-                            </strong>
-
-                            <p>
-
-                                Water Sports & Sunset Dinner
-
-                            </p>
-
-                        </div>
+                        <img th:src="@{/images/{img}(img=${packageData.image})}" alt="Package">
 
                     </div>
 
 
-                </div>
 
+                    <!-- Description -->
 
+                    <div class="detail-section">
 
-                <!-- Package Type -->
+                        <h2 th:text="${packageData.name}">
+                        </h2>
 
-<div class="detail-section">
 
-    <h3>
-
-        Package Type
-
-    </h3>
-
-    <p th:text="${packageData.packageType}">
-
-        Domestic
-
-    </p>
-
-</div>
-
-                <!-- Hotel -->
-
-                <div class="detail-section">
-
-                    <h3>
-
-                        Hotel
-
-                    </h3>
-
-
-                    <p>
-
-                        ★★★★ Grand Bali Resort
-
-                    </p>
-
-
-                    <p>
-
-                        Breakfast Included
-
-                    </p>
-
-
-                </div>
-
-
-
-
-
-
-                <!-- Transportation -->
-
-                <div class="detail-section">
-
-                    <h3>
-
-                        Transportation
-
-                    </h3>
-
-
-                    <p>
-
-                        Airport Pickup
-
-                    </p>
-
-
-                    <p>
-
-                        Private Tour Bus
-
-                    </p>
-
-
-                </div>
-
-
-
-
-
-
-                <!-- Reviews -->
-
-                <div class="detail-section">
-
-                    <h3>
-
-                        Reviews
-
-                    </h3>
-
-
-                    <div class="review-card">
-
-                        <strong>
-
-                            Sarah
-
-                        </strong>
-
-
-                        <p>
-
-                            ⭐⭐⭐⭐⭐
-
-                        </p>
-
-
-                        <p>
-
-                            Amazing trip and great itinerary!
+                        <p th:text="${packageData.description}">
 
                         </p>
 
                     </div>
 
 
+
+
+                    <!-- Itinerary -->
+
+                    <div class="detail-section">
+
+                        <h3>
+
+                            Itinerary
+
+                        </h3>
+
+
+                        <div class="timeline">
+
+
+                            <div class="timeline-item">
+
+                                <strong>
+
+                                    Day 1
+
+                                </strong>
+
+                                <p>
+
+                                    Arrival & Uluwatu Temple
+
+                                </p>
+
+                            </div>
+
+
+                            <div class="timeline-item">
+
+                                <strong>
+
+                                    Day 2
+
+                                </strong>
+
+                                <p>
+
+                                    Nusa Penida Tour
+
+                                </p>
+
+                            </div>
+
+
+                            <div class="timeline-item">
+
+                                <strong>
+
+                                    Day 3
+
+                                </strong>
+
+                                <p>
+
+                                    Water Sports & Sunset Dinner
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- Package Type -->
+
+                    <div class="detail-section">
+
+                        <h3>
+
+                            Package Type
+
+                        </h3>
+
+                        <p th:text="${packageData.packageType}">
+
+                            Domestic
+
+                        </p>
+
+                    </div>
+
+                    <!-- Hotel -->
+
+                    <div class="detail-section">
+
+                        <h3>
+
+                            Hotel
+
+                        </h3>
+
+
+                        <p>
+
+                            ★★★★ Grand Bali Resort
+
+                        </p>
+
+
+                        <p>
+
+                            Breakfast Included
+
+                        </p>
+
+
+                    </div>
+
+
+
+
+
+
+                    <!-- Transportation -->
+
+                    <div class="detail-section">
+
+                        <h3>
+
+                            Transportation
+
+                        </h3>
+
+
+                        <p>
+
+                            Airport Pickup
+
+                        </p>
+
+
+                        <p>
+
+                            Private Tour Bus
+
+                        </p>
+
+
+                    </div>
+
+
+
+
+
+
+                    <!-- Reviews -->
+
+                    <div class="detail-section">
+
+                        <h3>
+
+                            Reviews
+
+                        </h3>
+
+
+                        <div class="review-card">
+
+                            <strong>
+
+                                Sarah
+
+                            </strong>
+
+
+                            <p>
+
+                                ⭐⭐⭐⭐⭐
+
+                            </p>
+
+
+                            <p>
+
+                                Amazing trip and great itinerary!
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
                 </div>
+
+
+
+
+
+
+                <!-- RIGHT -->
+
+                <aside class="booking-card">
+
+                    <span class="booking-price" id="packagePrice" th:data-price="${packageData.price}"
+                        th:text="'Rp ' + ${packageData.price}">
+                    </span>
+
+                    <p>
+                        per person
+                    </p>
+
+
+
+
+                    <div class="booking-form">
+
+
+                        <label>
+
+                            Departure Date
+
+                        </label>
+
+
+                        <input class="input-field" type="date">
+
+
+
+
+
+                        <label>
+
+                            Travelers
+
+                        </label>
+
+
+                        <input class="input-field" type="number" id="travelerCount" value="1" min="1">
+
+
+
+
+
+                        <div class="booking-total">
+
+
+                            Total
+
+                            <strong id="totalPrice">
+                                Rp 3.000.000
+                            </strong>
+
+
+                        </div>
+
+
+
+
+
+                        <a th:href="@{/booking/{id}(id=${packageData.id})}" class="btn-primary">
+                            Book Now
+                        </a>
+
+
+                    </div>
+
+
+                </aside>
+
 
 
 
             </div>
 
 
-
-
-
-
-            <!-- RIGHT -->
-
-            <aside class="booking-card">
-
-            <span class="booking-price"
-                id="packagePrice"
-                th:data-price="${packageData.price}"
-                th:text="'Rp ' + ${packageData.price}">
-            </span>
-
-            <p>
-                per person
-            </p>
-
-
-
-
-                <div class="booking-form">
-
-
-                    <label>
-
-                        Departure Date
-
-                    </label>
-
-
-                    <input
-
-                    class="input-field"
-
-                    type="date">
-
-
-
-
-
-                    <label>
-
-                        Travelers
-
-                    </label>
-
-
-                    <input
-                        class="input-field"
-                        type="number"
-                        id="travelerCount"
-                        value="1"
-                        min="1">
-
-
-
-
-
-                    <div class="booking-total">
-
-
-                        Total
-
-                        <strong id="totalPrice">
-                            Rp 3.000.000
-                        </strong>
-
-
-                    </div>
-
-
-
-
-
-                    <a th:href="@{/booking/{id}(id=${packageData.id})}" class="btn-primary">
-                        Book Now
-                    </a>
-
-
-                </div>
-
-
-            </aside>
-
-
-
-
         </div>
 
+    </section>
 
+
+
+
+
+    <!-- FOOTER -->
+
+    <div th:replace="~{fragments/footer :: footer}">
     </div>
 
-</section>
+    <script>
 
+        const packagePrice =
+            Number(
+                document
+                    .getElementById("packagePrice")
+                    .dataset.price
+            );
 
+        const travelerInput =
+            document.getElementById("travelerCount");
 
+        const totalPrice =
+            document.getElementById("totalPrice");
 
+        function updateTotal() {
 
-<!-- FOOTER -->
+            const travelers =
+                Number(travelerInput.value);
 
-<div th:replace="~{fragments/footer :: footer}">
-</div>
+            const total =
+                packagePrice * travelers;
 
-<script>
+            totalPrice.innerText =
+                "Rp " +
+                total.toLocaleString("id-ID");
+        }
 
-const packagePrice =
-    Number(
-        document
-            .getElementById("packagePrice")
-            .dataset.price
-    );
+        travelerInput.addEventListener(
+            "input",
+            updateTotal
+        );
 
-const travelerInput =
-    document.getElementById("travelerCount");
+        updateTotal();
 
-const totalPrice =
-    document.getElementById("totalPrice");
-
-function updateTotal() {
-
-    const travelers =
-        Number(travelerInput.value);
-
-    const total =
-        packagePrice * travelers;
-
-    totalPrice.innerText =
-        "Rp " +
-        total.toLocaleString("id-ID");
-}
-
-travelerInput.addEventListener(
-    "input",
-    updateTotal
-);
-
-updateTotal();
-
-</script>
+    </script>
 
 
 </body>

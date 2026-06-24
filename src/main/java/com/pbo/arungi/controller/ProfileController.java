@@ -14,144 +14,136 @@ import java.util.Optional;
 @Controller
 public class ProfileController {
 
-private final UserRepository userRepository;
+        private final UserRepository userRepository;
 
-public ProfileController(UserRepository userRepository) {
-    this.userRepository = userRepository;
-}
-
-@GetMapping("/profile")
-public String profile(
-        HttpSession session,
-        Model model) {
-
-    Boolean isLoggedIn =
-            (Boolean) session.getAttribute("isLoggedIn");
-
-    if (isLoggedIn == null || !isLoggedIn) {
-        return "redirect:/login";
-    }
-
-    String email =
-            (String) session.getAttribute("userEmail");
-
-    model.addAttribute("email", email);
-
-    return "profile";
-}
-
-@GetMapping("/profile/settings")
-public String settings(
-        HttpSession session,
-        Model model) {
-
-    Boolean isLoggedIn =
-            (Boolean) session.getAttribute("isLoggedIn");
-
-    if (isLoggedIn == null || !isLoggedIn) {
-        return "redirect:/login";
-    }
-
-    String email =
-            (String) session.getAttribute("userEmail");
-
-    Optional<User> userOptional =
-            userRepository.findByEmail(email);
-
-    if (userOptional.isPresent()) {
-
-        User user = userOptional.get();
-
-        model.addAttribute(
-                "fullName",
-                user.getFullName());
-
-        model.addAttribute(
-                "email",
-                user.getEmail());
-    }
-
-    return "profile-settings";
-}
-
-@PostMapping("/profile/settings")
-public String saveSettings(
-        @RequestParam String fullName,
-        @RequestParam String email,
-        @RequestParam String password,
-        @RequestParam String confirmPassword,
-        HttpSession session,
-        Model model) {
-
-    Boolean isLoggedIn =
-            (Boolean) session.getAttribute("isLoggedIn");
-
-    if (isLoggedIn == null || !isLoggedIn) {
-        return "redirect:/login";
-    }
-
-    String currentEmail =
-            (String) session.getAttribute("userEmail");
-
-    Optional<User> userOptional =
-            userRepository.findByEmail(currentEmail);
-
-    if (userOptional.isEmpty()) {
-
-        model.addAttribute(
-                "error",
-                "User tidak ditemukan!");
-
-        return "profile-settings";
-    }
-
-    User user = userOptional.get();
-
-    if (!password.isBlank()) {
-
-        if (password.length() < 8) {
-
-            model.addAttribute(
-                    "error",
-                    "Password minimal 8 karakter!");
-
-            return "profile-settings";
+        public ProfileController(UserRepository userRepository) {
+                this.userRepository = userRepository;
         }
 
-        if (!password.equals(confirmPassword)) {
+        @GetMapping("/profile")
+        public String profile(
+                        HttpSession session,
+                        Model model) {
 
-            model.addAttribute(
-                    "error",
-                    "Password dan Confirm Password harus sama!");
+                Boolean isLoggedIn = (Boolean) session.getAttribute("isLoggedIn");
 
-            return "profile-settings";
+                if (isLoggedIn == null || !isLoggedIn) {
+                        return "redirect:/login";
+                }
+
+                String email = (String) session.getAttribute("userEmail");
+
+                model.addAttribute("email", email);
+
+                return "profile";
         }
 
-        user.setPassword(password);
-    }
+        @GetMapping("/profile/settings")
+        public String settings(
+                        HttpSession session,
+                        Model model) {
 
-    user.setFullName(fullName);
-    user.setEmail(email);
+                Boolean isLoggedIn = (Boolean) session.getAttribute("isLoggedIn");
 
-    userRepository.save(user);
+                if (isLoggedIn == null || !isLoggedIn) {
+                        return "redirect:/login";
+                }
 
-    session.setAttribute(
-            "userEmail",
-            email);
+                String email = (String) session.getAttribute("userEmail");
 
-    model.addAttribute(
-            "success",
-            "Profile updated successfully!");
+                Optional<User> userOptional = userRepository.findByEmail(email);
 
-    model.addAttribute(
-            "email",
-            email);
+                if (userOptional.isPresent()) {
 
-    model.addAttribute(
-            "fullName",
-            fullName);
+                        User user = userOptional.get();
 
-    return "profile-settings";
-}
+                        model.addAttribute(
+                                        "fullName",
+                                        user.getFullName());
+
+                        model.addAttribute(
+                                        "email",
+                                        user.getEmail());
+                }
+
+                return "profile-settings";
+        }
+
+        @PostMapping("/profile/settings")
+        public String saveSettings(
+                        @RequestParam String fullName,
+                        @RequestParam String email,
+                        @RequestParam String password,
+                        @RequestParam String confirmPassword,
+                        HttpSession session,
+                        Model model) {
+
+                Boolean isLoggedIn = (Boolean) session.getAttribute("isLoggedIn");
+
+                if (isLoggedIn == null || !isLoggedIn) {
+                        return "redirect:/login";
+                }
+
+                String currentEmail = (String) session.getAttribute("userEmail");
+
+                Optional<User> userOptional = userRepository.findByEmail(currentEmail);
+
+                if (userOptional.isEmpty()) {
+
+                        model.addAttribute(
+                                        "error",
+                                        "User tidak ditemukan!");
+
+                        return "profile-settings";
+                }
+
+                User user = userOptional.get();
+
+                if (!password.isBlank()) {
+
+                        if (password.length() < 8) {
+
+                                model.addAttribute(
+                                                "error",
+                                                "Password minimal 8 karakter!");
+
+                                return "profile-settings";
+                        }
+
+                        if (!password.equals(confirmPassword)) {
+
+                                model.addAttribute(
+                                                "error",
+                                                "Password dan Confirm Password harus sama!");
+
+                                return "profile-settings";
+                        }
+
+                        user.setPassword(password);
+                }
+
+                user.setFullName(fullName);
+                user.setEmail(email);
+
+                userRepository.save(user);
+
+                session.setAttribute(
+                                "userEmail",
+                                email);
+
+                model.addAttribute(
+                                "success",
+                                "Profile updated successfully!");
+
+                model.addAttribute(
+                                "email",
+                                email);
+
+                model.addAttribute(
+                                "fullName",
+                                fullName);
+
+                return "profile-settings";
+        }
 
 }

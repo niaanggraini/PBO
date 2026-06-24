@@ -29,11 +29,11 @@ public class TravelPackage {
     }
 
     public String getPackageType() {
-    return packageType;
+        return packageType;
     }
 
     public void setPackageType(String packageType) {
-    this.packageType = packageType;
+        this.packageType = packageType;
     }
 
     public Long getId() {
@@ -85,7 +85,7 @@ public class TravelPackage {
     }
 
     public int getDuration() {
-    return duration;
+        return duration;
     }
 
     public void setDuration(int duration) {
@@ -99,5 +99,5 @@ public class TravelPackage {
     public void setRating(double rating) {
         this.rating = rating;
     }
-    
+
 }

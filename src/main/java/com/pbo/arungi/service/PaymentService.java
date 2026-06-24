@@ -23,7 +23,8 @@ public class PaymentService {
     public Payment createPayment(Booking booking, String paymentMethod) {
         Optional<Payment> existing = paymentRepository.findByBooking(booking);
         if (existing.isPresent()) {
-            if (!"PAID".equals(booking.getStatus())) bookingService.markAsPaid(booking);
+            if (!"PAID".equals(booking.getStatus()))
+                bookingService.markAsPaid(booking);
             return existing.get();
         }
         Payment payment = new Payment(booking, paymentMethod, booking.getTotalPrice(), "PAID");

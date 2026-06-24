@@ -10,8 +10,7 @@ public class ArungiApplication {
 
         SpringApplication.run(
                 ArungiApplication.class,
-                args
-        );
+                args);
 
     }
 

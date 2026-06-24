@@ -13,96 +13,95 @@
 
 <body>
 
-<div th:replace="~{fragments/navbar :: navbar}"></div>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
 
-<section class="package-detail">
-    <div class="container">
-        <div class="package-detail-layout">
+    <section class="package-detail">
+        <div class="container">
+            <div class="package-detail-layout">
 
-            <!-- LEFT -->
-            <div>
-                <div class="detail-section">
-                    <h2>Traveler Information</h2>
+                <!-- LEFT -->
+                <div>
+                    <div class="detail-section">
+                        <h2>Traveler Information</h2>
 
-                    <p th:if="${error}" th:text="${error}"
-                       style="color:#C0392B; margin-bottom:20px;"></p>
+                        <p th:if="${error}" th:text="${error}" style="color:#C0392B; margin-bottom:20px;"></p>
 
-                    <form class="booking-form" th:action="@{/booking}" method="post">
+                        <form class="booking-form" th:action="@{/booking}" method="post">
 
-                        <input type="hidden" name="packageId" th:value="${packageData.id}">
+                            <input type="hidden" name="packageId" th:value="${packageData.id}">
 
-                        <label>Full Name</label>
-                        <input type="text" name="fullName" class="input-field"
-                               placeholder="Enter your full name" th:value="${fullName}" required>
+                            <label>Full Name</label>
+                            <input type="text" name="fullName" class="input-field" placeholder="Enter your full name"
+                                th:value="${fullName}" required>
 
-                        <label>Email</label>
-                        <input type="email" name="email" class="input-field"
-                               placeholder="Enter your email" th:value="${email}" required>
+                            <label>Email</label>
+                            <input type="email" name="email" class="input-field" placeholder="Enter your email"
+                                th:value="${email}" required>
 
-                        <label>Phone Number</label>
-                        <input type="text" name="phoneNumber" class="input-field"
-                               placeholder="+62" th:value="${phoneNumber}" required>
+                            <label>Phone Number</label>
+                            <input type="text" name="phoneNumber" class="input-field" placeholder="+62"
+                                th:value="${phoneNumber}" required>
 
-                        <label>Departure Date</label>
-                        <input type="date" name="departureDate" class="input-field"
-                               th:value="${departureDate}" required>
+                            <label>Departure Date</label>
+                            <input type="date" name="departureDate" class="input-field" th:value="${departureDate}"
+                                required>
 
-                        <label>Number of Travelers</label>
-                        <input type="number" name="travelers" id="travelers" class="input-field"
-                               th:value="${travelers != null ? travelers : 1}" min="1" required>
+                            <label>Number of Travelers</label>
+                            <input type="number" name="travelers" id="travelers" class="input-field"
+                                th:value="${travelers != null ? travelers : 1}" min="1" required>
 
-                        <button type="submit" class="btn-primary btn-block"
-                                style="width:100%; margin-top:20px;">
-                            Continue to Payment
-                        </button>
-                    </form>
+                            <button type="submit" class="btn-primary btn-block" style="width:100%; margin-top:20px;">
+                                Continue to Payment
+                            </button>
+                        </form>
+                    </div>
                 </div>
+
+                <!-- RIGHT -->
+                <aside class="booking-card">
+                    <h3>Booking Summary</h3>
+
+                    <div class="booking-item">
+                        <span>Package</span>
+                        <strong th:text="${packageData.name}">Package Name</strong>
+                    </div>
+
+                    <div class="booking-item">
+                        <span>Duration</span>
+                        <strong th:text="${packageData.duration} + ' Days'">5 Days</strong>
+                    </div>
+
+                    <div class="booking-item">
+                        <span>Price per Person</span>
+                        <strong th:text="'Rp ' + ${#numbers.formatInteger(packageData.price,0)}">Rp 0</strong>
+                    </div>
+
+                    <div class="booking-total">
+                        Total
+                        <strong id="totalPrice">Rp 0</strong>
+                    </div>
+                </aside>
+
             </div>
-
-            <!-- RIGHT -->
-            <aside class="booking-card">
-                <h3>Booking Summary</h3>
-
-                <div class="booking-item">
-                    <span>Package</span>
-                    <strong th:text="${packageData.name}">Package Name</strong>
-                </div>
-
-                <div class="booking-item">
-                    <span>Duration</span>
-                    <strong th:text="${packageData.duration} + ' Days'">5 Days</strong>
-                </div>
-
-                <div class="booking-item">
-                    <span>Price per Person</span>
-                    <strong th:text="'Rp ' + ${#numbers.formatInteger(packageData.price,0)}">Rp 0</strong>
-                </div>
-
-                <div class="booking-total">
-                    Total
-                    <strong id="totalPrice">Rp 0</strong>
-                </div>
-            </aside>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<div th:replace="~{fragments/footer :: footer}"></div>
+    <div th:replace="~{fragments/footer :: footer}"></div>
 
-<script th:inline="javascript">
-    const pricePerPerson = [[${packageData.price}]];
-    const travelersInput = document.getElementById('travelers');
-    const totalEl = document.getElementById('totalPrice');
+    <script th:inline="javascript">
+        const pricePerPerson = /*[[${packageData.price}]]*/ 0;
+        const travelersInput = document.getElementById('travelers');
+        const totalEl = document.getElementById('totalPrice');
 
-    function updateTotal() {
-        const t = parseInt(travelersInput.value) || 1;
-        totalEl.textContent = 'Rp ' + (pricePerPerson * t).toLocaleString('id-ID');
-    }
+        function updateTotal() {
+            const t = parseInt(travelersInput.value) || 1;
+            totalEl.textContent = 'Rp ' + (pricePerPerson * t).toLocaleString('id-ID');
+        }
 
-    travelersInput.addEventListener('input', updateTotal);
-    updateTotal();
-</script>
+        travelersInput.addEventListener('input', updateTotal);
+        updateTotal();
+    </script>
 
 </body>
+
 </html>

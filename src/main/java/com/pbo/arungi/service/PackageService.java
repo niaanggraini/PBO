@@ -49,19 +49,19 @@ public class PackageService {
 
     public List<TravelPackage> filterPackages(
 
-        String destination,
+            String destination,
 
-        Integer duration,
+            Integer duration,
 
-        Double minPrice,
+            Double minPrice,
 
-        Double maxPrice){
+            Double maxPrice) {
 
-    return packageRepository
-            .filterPackages(
-                    destination,
-                    duration,
-                    minPrice,
-                    maxPrice);
-}
+        return packageRepository
+                .filterPackages(
+                        destination,
+                        duration,
+                        minPrice,
+                        maxPrice);
+    }
 }

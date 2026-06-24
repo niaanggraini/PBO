@@ -10,8 +10,7 @@ public class GlobalControllerAdvice {
     @ModelAttribute("isLoggedIn")
     public boolean isLoggedIn(HttpSession session) {
 
-        Boolean loggedIn =
-                (Boolean) session.getAttribute("isLoggedIn");
+        Boolean loggedIn = (Boolean) session.getAttribute("isLoggedIn");
 
         return loggedIn != null && loggedIn;
     }

@@ -8,10 +8,8 @@ import java.util.List;
 public interface DestinationRepository
         extends JpaRepository<Destination, Long> {
 
-    List<Destination>
-    findByNameContainingIgnoreCase(String keyword);
+    List<Destination> findByNameContainingIgnoreCase(String keyword);
 
-    List<Destination>
-    findByCategory(String category);
+    List<Destination> findByCategory(String category);
 
 }

@@ -20,7 +20,7 @@ public class BookingService {
     }
 
     public Booking createBooking(User user, TravelPackage travelPackage, String fullName,
-                                  String email, String phoneNumber, LocalDate departureDate, int travelers) {
+            String email, String phoneNumber, LocalDate departureDate, int travelers) {
         double totalPrice = travelPackage.getPrice() * travelers;
         Booking booking = new Booking(user, travelPackage, fullName, email, phoneNumber,
                 departureDate, travelers, totalPrice, "WAITING_PAYMENT");

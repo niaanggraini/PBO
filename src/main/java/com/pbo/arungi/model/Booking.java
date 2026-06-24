@@ -29,10 +29,11 @@ public class Booking {
     private String status;
     private LocalDateTime createdAt;
 
-    public Booking() {}
+    public Booking() {
+    }
 
     public Booking(User user, TravelPackage travelPackage, String fullName, String email,
-                   String phoneNumber, LocalDate departureDate, int travelers, double totalPrice, String status) {
+            String phoneNumber, LocalDate departureDate, int travelers, double totalPrice, String status) {
         this.user = user;
         this.travelPackage = travelPackage;
         this.fullName = fullName;
@@ -47,28 +48,91 @@ public class Booking {
 
     @PrePersist
     public void prePersist() {
-        if (createdAt == null) createdAt = LocalDateTime.now();
+        if (createdAt == null)
+            createdAt = LocalDateTime.now();
     }
 
-    public Long getId() { return id; }
-    public User getUser() { return user; }
-    public void setUser(User user) { this.user = user; }
-    public TravelPackage getTravelPackage() { return travelPackage; }
-    public void setTravelPackage(TravelPackage travelPackage) { this.travelPackage = travelPackage; }
-    public String getFullName() { return fullName; }
-    public void setFullName(String fullName) { this.fullName = fullName; }
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-    public String getPhoneNumber() { return phoneNumber; }
-    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
-    public LocalDate getDepartureDate() { return departureDate; }
-    public void setDepartureDate(LocalDate departureDate) { this.departureDate = departureDate; }
-    public int getTravelers() { return travelers; }
-    public void setTravelers(int travelers) { this.travelers = travelers; }
-    public double getTotalPrice() { return totalPrice; }
-    public void setTotalPrice(double totalPrice) { this.totalPrice = totalPrice; }
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
-    public LocalDateTime getCreatedAt() { return createdAt; }
-    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    public Long getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public TravelPackage getTravelPackage() {
+        return travelPackage;
+    }
+
+    public void setTravelPackage(TravelPackage travelPackage) {
+        this.travelPackage = travelPackage;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public LocalDate getDepartureDate() {
+        return departureDate;
+    }
+
+    public void setDepartureDate(LocalDate departureDate) {
+        this.departureDate = departureDate;
+    }
+
+    public int getTravelers() {
+        return travelers;
+    }
+
+    public void setTravelers(int travelers) {
+        this.travelers = travelers;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 }

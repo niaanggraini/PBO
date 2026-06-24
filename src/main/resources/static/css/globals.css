@@ -18,12 +18,10 @@
   --accent: #0080D9;
 
   /* Button Gradient */
-  --gradient-primary: linear-gradient(
-    90deg,
-    #006B56 0%,
-    #007961 47%,
-    #0D9278 100%
-  );
+  --gradient-primary: linear-gradient(90deg,
+      #006B56 0%,
+      #007961 47%,
+      #0D9278 100%);
 
   /* Background */
   --bg-primary: #FFFFFF;
@@ -60,17 +58,17 @@
    RESET
 ===================== */
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
-body{
+body {
   font-family: "Inter", sans-serif;
   background: var(--bg-primary);
   color: var(--text-primary);
@@ -78,17 +76,17 @@ body{
   overflow-x: hidden;
 }
 
-img{
+img {
   width: 100%;
   display: block;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
-button{
+button {
   border: none;
   outline: none;
   background: none;
@@ -98,7 +96,7 @@ button{
 
 input,
 textarea,
-select{
+select {
   border: none;
   outline: none;
   font-family: inherit;
@@ -109,28 +107,28 @@ select{
    TYPOGRAPHY
 ===================== */
 
-h1{
+h1 {
   font-size: 64px;
   font-weight: 800;
   line-height: 1.15;
 }
 
-h2{
+h2 {
   font-size: 42px;
   font-weight: 700;
 }
 
-h3{
+h3 {
   font-size: 28px;
   font-weight: 700;
 }
 
-h4{
+h4 {
   font-size: 22px;
   font-weight: 600;
 }
 
-p{
+p {
   color: var(--text-secondary);
 }
 
@@ -139,26 +137,26 @@ p{
    LAYOUT
 ===================== */
 
-.container{
+.container {
   max-width: var(--container-width);
   margin: auto;
   padding-left: var(--container-padding);
   padding-right: var(--container-padding);
 }
 
-section{
+section {
   padding: 100px 0;
 }
 
-.grid{
+.grid {
   display: grid;
 }
 
-.flex{
+.flex {
   display: flex;
 }
 
-.center{
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -169,7 +167,7 @@ section{
    BUTTONS
 ===================== */
 
-.btn-primary{
+.btn-primary {
   display: inline-flex;
 
   align-items: center;
@@ -193,7 +191,7 @@ section{
   transition: var(--transition);
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
 
   transform: translateY(-2px);
 
@@ -202,7 +200,7 @@ section{
 
 
 
-.btn-outline{
+.btn-outline {
 
   background: #FFFFFF;
 
@@ -220,7 +218,7 @@ section{
 
 }
 
-.btn-outline:hover{
+.btn-outline:hover {
 
   border-color: var(--primary);
 
@@ -228,19 +226,19 @@ section{
 
 }
 
-.btn-block{
+.btn-block {
 
-    display: flex;
+  display: flex;
 
-    align-items: center;
+  align-items: center;
 
-    justify-content: center;
+  justify-content: center;
 
-    width: 100%;
+  width: 100%;
 
-    margin-top: 30px;
+  margin-top: 30px;
 
-    text-decoration: none;
+  text-decoration: none;
 
 }
 
@@ -249,11 +247,11 @@ section{
    CARD
 ===================== */
 
-.card{
+.card {
 
   background: #FFFFFF;
 
-  border: 1px solid rgba(229,231,235,.5);
+  border: 1px solid rgba(229, 231, 235, .5);
 
   border-radius: var(--radius-lg);
 
@@ -263,7 +261,7 @@ section{
 
 }
 
-.card:hover{
+.card:hover {
 
   transform: translateY(-4px);
 
@@ -276,7 +274,7 @@ section{
    INPUT
 ===================== */
 
-.input-field{
+.input-field {
 
   width: 100%;
 
@@ -296,11 +294,11 @@ section{
 
 }
 
-.input-field:focus{
+.input-field:focus {
 
   border-color: var(--primary);
 
-  box-shadow: 0 0 0 4px rgba(57,190,158,.1);
+  box-shadow: 0 0 0 4px rgba(57, 190, 158, .1);
 
 }
 
@@ -309,7 +307,7 @@ section{
    NAVBAR
 ===================== */
 
-.navbar{
+.navbar {
 
   position: sticky;
 
@@ -321,52 +319,50 @@ section{
 
   height: 78px;
 
-  background: rgba(255,255,255,.85);
+  background: rgba(255, 255, 255, .85);
 
   backdrop-filter: blur(12px);
 
-  border-bottom: 1px solid rgba(229,231,235,.5);
+  border-bottom: 1px solid rgba(229, 231, 235, .5);
 
 }
 
 .nav-menu a {
-    position: relative;
-    text-decoration: none;
-    color: var(--text-primary);
-    font-weight: 500;
-    transition: 0.3s;
+  position: relative;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 .nav-menu a:hover {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 .nav-menu a.active {
-    color: var(--primary);
-    font-weight: 700;
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .nav-menu a.active::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 100%;
-    height: 3px;
-    border-radius: 999px;
-    background: linear-gradient(
-        90deg,
-        #006B56 0%,
-        #007961 47%,
-        #0D9278 100%
-    );
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+      #006B56 0%,
+      #007961 47%,
+      #0D9278 100%);
 }
 
 /* =====================
    LOGO
 ===================== */
 
-.logo{
+.logo {
 
   font-size: 28px;
 
@@ -376,19 +372,19 @@ section{
 
 }
 
-.logo-text{
+.logo-text {
 
   color: #0d9278;
 
 }
 
-.logo-blue{
+.logo-blue {
 
   color: #0080D9;
 
 }
 
-.logo-sky{
+.logo-sky {
 
   color: #54B8FF;
 
@@ -399,7 +395,7 @@ section{
    FOOTER
 ===================== */
 
-.footer{
+.footer {
 
   background: #FFFFFF;
 
@@ -407,7 +403,7 @@ section{
 
 }
 
-.footer-title{
+.footer-title {
 
   font-size: 18px;
 
@@ -417,7 +413,7 @@ section{
 
 }
 
-.footer-link{
+.footer-link {
 
   display: block;
 
@@ -429,7 +425,7 @@ section{
 
 }
 
-.footer-link:hover{
+.footer-link:hover {
 
   color: var(--primary);
 
@@ -440,39 +436,67 @@ section{
    UTILITIES
 ===================== */
 
-.text-center{
+.text-center {
 
   text-align: center;
 
 }
 
-.text-primary{
+.text-primary {
 
   color: var(--primary);
 
 }
 
-.text-secondary{
+.text-secondary {
 
   color: var(--text-secondary);
 
 }
 
-.bg-secondary{
+.bg-secondary {
 
   background: var(--bg-secondary);
 
 }
 
 
-.mt-1{ margin-top: 8px; }
-.mt-2{ margin-top: 16px; }
-.mt-3{ margin-top: 24px; }
-.mt-4{ margin-top: 32px; }
-.mt-5{ margin-top: 48px; }
+.mt-1 {
+  margin-top: 8px;
+}
 
-.mb-1{ margin-bottom: 8px; }
-.mb-2{ margin-bottom: 16px; }
-.mb-3{ margin-bottom: 24px; }
-.mb-4{ margin-bottom: 32px; }
-.mb-5{ margin-bottom: 48px; }
+.mt-2 {
+  margin-top: 16px;
+}
+
+.mt-3 {
+  margin-top: 24px;
+}
+
+.mt-4 {
+  margin-top: 32px;
+}
+
+.mt-5 {
+  margin-top: 48px;
+}
+
+.mb-1 {
+  margin-bottom: 8px;
+}
+
+.mb-2 {
+  margin-bottom: 16px;
+}
+
+.mb-3 {
+  margin-bottom: 24px;
+}
+
+.mb-4 {
+  margin-bottom: 32px;
+}
+
+.mb-5 {
+  margin-bottom: 48px;
+}

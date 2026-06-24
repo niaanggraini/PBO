@@ -12,96 +12,86 @@ import java.util.List;
 @Controller
 public class PackageController {
 
-    private final PackageService packageService;
+        private final PackageService packageService;
 
-    public PackageController(
-            PackageService packageService) {
+        public PackageController(
+                        PackageService packageService) {
 
-        this.packageService = packageService;
-    }
-
-@GetMapping("/packages")
-public String packages(
-
-        @RequestParam(required = false)
-        String destination,
-
-        @RequestParam(required = false)
-        Integer duration,
-
-        @RequestParam(required = false)
-        Double minPrice,
-
-        @RequestParam(required = false)
-        Double maxPrice,
-
-        Model model) {
-
-    List<TravelPackage> packages =
-            packageService.filterPackages(
-                    destination,
-                    duration,
-                    minPrice,
-                    maxPrice);
-
-    model.addAttribute(
-            "packages",
-            packages);
-
-    model.addAttribute(
-            "selectedDestination",
-            destination);
-
-    return "packages";
-}
-
-    @GetMapping("/packages/detail")
-    public String packageDetail(
-            HttpSession session) {
-
-        Boolean isLoggedIn =
-                (Boolean) session.getAttribute(
-                        "isLoggedIn");
-
-        if (isLoggedIn == null ||
-                !isLoggedIn) {
-
-            return "redirect:/login";
+                this.packageService = packageService;
         }
 
-        return "package-detail";
-    }
+        @GetMapping("/packages")
+        public String packages(
 
-    @GetMapping("/packages/detail/{id}")
-    public String packageDetail(
+                        @RequestParam(required = false) String destination,
 
-            @PathVariable Long id,
+                        @RequestParam(required = false) Integer duration,
 
-            Model model,
+                        @RequestParam(required = false) Double minPrice,
 
-            HttpSession session) {
+                        @RequestParam(required = false) Double maxPrice,
 
-        Boolean isLoggedIn =
-                (Boolean) session.getAttribute(
-                        "isLoggedIn");
+                        Model model) {
 
-        if (isLoggedIn == null ||
-                !isLoggedIn) {
+                List<TravelPackage> packages = packageService.filterPackages(
+                                destination,
+                                duration,
+                                minPrice,
+                                maxPrice);
 
-            return "redirect:/login";
+                model.addAttribute(
+                                "packages",
+                                packages);
+
+                model.addAttribute(
+                                "selectedDestination",
+                                destination);
+
+                return "packages";
         }
 
-        TravelPackage travelPackage =
-                packageService
-                        .getPackageById(id);
+        @GetMapping("/packages/detail")
+        public String packageDetail(
+                        HttpSession session) {
 
-        model.addAttribute(
-                "packageData",
-                travelPackage);
+                Boolean isLoggedIn = (Boolean) session.getAttribute(
+                                "isLoggedIn");
 
-        return "package-detail";
-    }
+                if (isLoggedIn == null ||
+                                !isLoggedIn) {
 
-    
+                        return "redirect:/login";
+                }
+
+                return "package-detail";
+        }
+
+        @GetMapping("/packages/detail/{id}")
+        public String packageDetail(
+
+                        @PathVariable Long id,
+
+                        Model model,
+
+                        HttpSession session) {
+
+                Boolean isLoggedIn = (Boolean) session.getAttribute(
+                                "isLoggedIn");
+
+                if (isLoggedIn == null ||
+                                !isLoggedIn) {
+
+                        return "redirect:/login";
+                }
+
+                TravelPackage travelPackage = packageService
+                                .getPackageById(id);
+
+                model.addAttribute(
+                                "packageData",
+                                travelPackage);
+
+                return "package-detail";
+        }
 
 }

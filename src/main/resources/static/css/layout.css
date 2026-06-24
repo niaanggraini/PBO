@@ -142,11 +142,11 @@ section {
 
     height: 78px;
 
-    background: rgba(255,255,255,.85);
+    background: rgba(255, 255, 255, .85);
 
     backdrop-filter: blur(12px);
 
-    border-bottom: 1px solid rgba(229,231,235,.6);
+    border-bottom: 1px solid rgba(229, 231, 235, .6);
 
 }
 
@@ -291,13 +291,9 @@ section {
 
     background:
 
-        linear-gradient(
+        linear-gradient(rgba(0, 0, 0, .25),
 
-            rgba(0,0,0,.25),
-
-            rgba(0,0,0,.45)
-
-        );
+            rgba(0, 0, 0, .45));
 
 }
 
@@ -329,7 +325,7 @@ section {
 
 .hero-subtitle {
 
-    color: rgba(255,255,255,.85);
+    color: rgba(255, 255, 255, .85);
 
     font-size: 18px;
 
@@ -371,7 +367,7 @@ section {
 
     grid-template-columns:
 
-        repeat(4,1fr);
+        repeat(4, 1fr);
 
     gap: 32px;
 
@@ -388,7 +384,7 @@ section {
 
     grid-template-columns:
 
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
     gap: 32px;
 
@@ -405,7 +401,7 @@ section {
 
     grid-template-columns:
 
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
     gap: 32px;
 
@@ -422,7 +418,7 @@ section {
 
     grid-template-columns:
 
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
     gap: 32px;
 
@@ -441,9 +437,7 @@ section {
 
     border-top:
 
-        1px solid
-
-        var(--border-color);
+        1px solid var(--border-color);
 
 }
 
@@ -453,13 +447,7 @@ section {
 
     grid-template-columns:
 
-        2fr
-
-        1fr
-
-        1fr
-
-        1fr;
+        2fr 1fr 1fr 1fr;
 
     gap: 60px;
 
@@ -495,9 +483,7 @@ section {
 
     border-top:
 
-        1px solid
-
-        var(--border-color);
+        1px solid var(--border-color);
 
     display: flex;
 
@@ -543,7 +529,7 @@ section {
 
     background:
 
-        rgba(57,190,158,.1);
+        rgba(57, 190, 158, .1);
 
     color:
 
@@ -605,9 +591,7 @@ section {
 
     border-right:
 
-        1px solid
-
-        var(--border-color);
+        1px solid var(--border-color);
 
     padding: 32px;
 
@@ -657,7 +641,7 @@ section {
 
     background:
 
-        rgba(57,190,158,.08);
+        rgba(57, 190, 158, .08);
 
     color:
 
@@ -677,7 +661,7 @@ section {
    SEARCH SECTION
 ===================== */
 
-.search-section{
+.search-section {
 
     margin-top: 40px;
 
@@ -685,7 +669,7 @@ section {
 
 
 
-.search-wrapper{
+.search-wrapper {
 
     display: flex;
 
@@ -697,7 +681,7 @@ section {
 
 
 
-.search-box{
+.search-box {
 
     flex: 1;
 
@@ -707,7 +691,7 @@ section {
 
 
 
-.search-icon{
+.search-icon {
 
     position: absolute;
 
@@ -725,7 +709,7 @@ section {
 
 
 
-.search-input{
+.search-input {
 
     width: 100%;
 
@@ -747,7 +731,7 @@ section {
 
 
 
-.search-input:focus{
+.search-input:focus {
 
     outline: none;
 
@@ -755,9 +739,7 @@ section {
 
     box-shadow:
 
-        0 0 0 4px
-
-        rgba(57,190,158,.1);
+        0 0 0 4px rgba(57, 190, 158, .1);
 
 }
 
@@ -767,7 +749,7 @@ section {
    FILTER
 ===================== */
 
-.filter-wrapper{
+.filter-wrapper {
 
     display: flex;
 
@@ -781,7 +763,7 @@ section {
 
 
 
-.filter-btn{
+.filter-btn {
 
     padding: 12px 24px;
 
@@ -805,17 +787,17 @@ section {
 
 
 
-.filter-btn:hover{
+.filter-btn:hover {
 
     transform: translateY(-2px);
 
-    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
 
 }
 
 
 
-.filter-btn.active{
+.filter-btn.active {
 
     background: var(--gradient-primary);
 
@@ -823,9 +805,7 @@ section {
 
     box-shadow:
 
-        0 8px 24px
-
-        rgba(13,146,120,.25);
+        0 8px 24px rgba(13, 146, 120, .25);
 
 }
 
@@ -833,9 +813,9 @@ section {
    RESPONSIVE
 ===================== */
 
-@media (max-width: 1200px){
+@media (max-width: 1200px) {
 
-    .container{
+    .container {
 
         padding-left: 40px;
 
@@ -843,28 +823,28 @@ section {
 
     }
 
-    .destinations-grid{
+    .destinations-grid {
 
         grid-template-columns:
 
-            repeat(2,1fr);
+            repeat(2, 1fr);
 
     }
 
-    .packages-grid{
+    .packages-grid {
 
         grid-template-columns:
 
-            repeat(2,1fr);
+            repeat(2, 1fr);
 
     }
 
 }
 
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-    .container{
+    .container {
 
         padding-left: 24px;
 
@@ -884,25 +864,25 @@ section {
 
     .why-grid,
 
-    .testimonial-grid{
+    .testimonial-grid {
 
         grid-template-columns: 1fr;
 
     }
 
-    .nav-menu{
+    .nav-menu {
 
         display: none;
 
     }
 
-    .hero-title{
+    .hero-title {
 
         font-size: 42px;
 
     }
 
-    .hero-content{
+    .hero-content {
 
         left: 32px;
 
@@ -910,7 +890,7 @@ section {
 
     }
 
-    .hero-search{
+    .hero-search {
 
         width: calc(100% - 48px);
 

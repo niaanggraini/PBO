@@ -24,7 +24,8 @@ public class PaymentController {
     private final BookingService bookingService;
     private final UserRepository userRepository;
 
-    public PaymentController(PaymentService paymentService, BookingService bookingService, UserRepository userRepository) {
+    public PaymentController(PaymentService paymentService, BookingService bookingService,
+            UserRepository userRepository) {
         this.paymentService = paymentService;
         this.bookingService = bookingService;
         this.userRepository = userRepository;
@@ -39,7 +40,8 @@ public class PaymentController {
     public String paymentForm(@PathVariable Long bookingId, HttpSession session, Model model) {
 
         Optional<User> userOptional = getLoggedInUser(session);
-        if (userOptional.isEmpty()) return "redirect:/login";
+        if (userOptional.isEmpty())
+            return "redirect:/login";
 
         Optional<Booking> bookingOptional = bookingService.getBookingById(bookingId);
         if (bookingOptional.isEmpty() || !bookingService.isOwnedBy(bookingOptional.get(), userOptional.get())) {
@@ -58,7 +60,8 @@ public class PaymentController {
             Model model) {
 
         Optional<User> userOptional = getLoggedInUser(session);
-        if (userOptional.isEmpty()) return "redirect:/login";
+        if (userOptional.isEmpty())
+            return "redirect:/login";
 
         Optional<Booking> bookingOptional = bookingService.getBookingById(bookingId);
         if (bookingOptional.isEmpty() || !bookingService.isOwnedBy(bookingOptional.get(), userOptional.get())) {
@@ -77,9 +80,11 @@ public class PaymentController {
 
     private Optional<User> getLoggedInUser(HttpSession session) {
         Boolean isLoggedIn = (Boolean) session.getAttribute("isLoggedIn");
-        if (isLoggedIn == null || !isLoggedIn) return Optional.empty();
+        if (isLoggedIn == null || !isLoggedIn)
+            return Optional.empty();
         String email = (String) session.getAttribute("userEmail");
-        if (email == null || email.isBlank()) return Optional.empty();
+        if (email == null || email.isBlank())
+            return Optional.empty();
         return userRepository.findByEmail(email);
     }
 }

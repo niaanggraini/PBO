@@ -42,8 +42,7 @@ public class AuthController {
             return "login";
         }
 
-        Optional<User> userOptional =
-                userRepository.findByEmail(email);
+        Optional<User> userOptional = userRepository.findByEmail(email);
 
         if (userOptional.isEmpty()) {
 

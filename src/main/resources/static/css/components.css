@@ -8,7 +8,7 @@
    SECTION HEADER
 ===================== */
 
-.section-header{
+.section-header {
 
     display: flex;
 
@@ -20,7 +20,7 @@
 
 }
 
-.section-title{
+.section-title {
 
     font-size: 42px;
 
@@ -30,7 +30,7 @@
 
 }
 
-.section-subtitle{
+.section-subtitle {
 
     color: var(--text-secondary);
 
@@ -46,7 +46,7 @@
    SEARCH CARD
 ===================== */
 
-.search-card{
+.search-card {
 
     background: #FFFFFF;
 
@@ -64,7 +64,7 @@
 
 }
 
-.search-tabs{
+.search-tabs {
 
     display: flex;
 
@@ -72,7 +72,7 @@
 
 }
 
-.search-tab{
+.search-tab {
 
     padding: 10px 22px;
 
@@ -90,29 +90,21 @@
 
 }
 
-.search-tab.active{
+.search-tab.active {
 
-    background: rgba(57,190,158,.12);
+    background: rgba(57, 190, 158, .12);
 
     color: var(--primary);
 
 }
 
-.search-form{
+.search-form {
 
     display: grid;
 
     grid-template-columns:
 
-        2fr
-
-        1fr
-
-        1fr
-
-        1fr
-
-        auto;
+        2fr 1fr 1fr 1fr auto;
 
     gap: 18px;
 
@@ -124,7 +116,7 @@
    DESTINATION CARD
 ===================== */
 
-.destination-card{
+.destination-card {
 
     background: #FFFFFF;
 
@@ -142,7 +134,7 @@
 
 }
 
-.destination-card:hover{
+.destination-card:hover {
 
     transform:
 
@@ -154,7 +146,7 @@
 
 }
 
-.destination-image{
+.destination-image {
 
     height: 260px;
 
@@ -162,7 +154,7 @@
 
 }
 
-.destination-image img{
+.destination-image img {
 
     width: 100%;
 
@@ -174,19 +166,19 @@
 
 }
 
-.destination-card:hover img{
+.destination-card:hover img {
 
     transform: scale(1.05);
 
 }
 
-.destination-content{
+.destination-content {
 
     padding: 24px;
 
 }
 
-.destination-country{
+.destination-country {
 
     color: var(--text-secondary);
 
@@ -194,7 +186,7 @@
 
 }
 
-.destination-title{
+.destination-title {
 
     font-size: 24px;
 
@@ -204,7 +196,7 @@
 
 }
 
-.destination-footer{
+.destination-footer {
 
     display: flex;
 
@@ -216,7 +208,7 @@
 
 }
 
-.destination-price{
+.destination-price {
 
     font-size: 14px;
 
@@ -224,7 +216,7 @@
 
 }
 
-.destination-price strong{
+.destination-price strong {
 
     color: var(--text-primary);
 
@@ -232,7 +224,7 @@
 
 }
 
-.destination-btn{
+.destination-btn {
 
     display: block;
 
@@ -255,7 +247,7 @@
    PACKAGE CARD
 ===================== */
 
-.package-card{
+.package-card {
 
     background: #FFFFFF;
 
@@ -269,7 +261,7 @@
 
 }
 
-.package-card:hover{
+.package-card:hover {
 
     transform:
 
@@ -281,7 +273,7 @@
 
 }
 
-.package-image{
+.package-image {
 
     height: 230px;
 
@@ -289,7 +281,7 @@
 
 }
 
-.package-image img{
+.package-image img {
 
     width: 100%;
 
@@ -299,13 +291,13 @@
 
 }
 
-.package-content{
+.package-content {
 
     padding: 24px;
 
 }
 
-.package-location{
+.package-location {
 
     font-size: 14px;
 
@@ -313,7 +305,7 @@
 
 }
 
-.package-title{
+.package-title {
 
     font-size: 22px;
 
@@ -323,7 +315,7 @@
 
 }
 
-.package-meta{
+.package-meta {
 
     display: flex;
 
@@ -337,7 +329,7 @@
 
 }
 
-.package-footer{
+.package-footer {
 
     display: flex;
 
@@ -349,7 +341,7 @@
 
 }
 
-.package-price{
+.package-price {
 
     display: flex;
 
@@ -357,7 +349,7 @@
 
 }
 
-.package-price span{
+.package-price span {
 
     font-size: 13px;
 
@@ -365,7 +357,7 @@
 
 }
 
-.package-price strong{
+.package-price strong {
 
     font-size: 24px;
 
@@ -379,7 +371,7 @@
    FEATURE CARD
 ===================== */
 
-.feature-card{
+.feature-card {
 
     background: #FFFFFF;
 
@@ -395,7 +387,7 @@
 
 }
 
-.feature-card:hover{
+.feature-card:hover {
 
     transform:
 
@@ -407,7 +399,7 @@
 
 }
 
-.feature-icon{
+.feature-icon {
 
     width: 70px;
 
@@ -419,7 +411,7 @@
 
     background:
 
-        rgba(57,190,158,.1);
+        rgba(57, 190, 158, .1);
 
     display: flex;
 
@@ -433,7 +425,7 @@
 
 }
 
-.feature-title{
+.feature-title {
 
     font-size: 22px;
 
@@ -443,7 +435,7 @@
 
 }
 
-.feature-description{
+.feature-description {
 
     margin-top: 12px;
 
@@ -455,7 +447,7 @@
    TESTIMONIAL CARD
 ===================== */
 
-.testimonial-card{
+.testimonial-card {
 
     background: #FFFFFF;
 
@@ -467,7 +459,7 @@
 
 }
 
-.testimonial-user{
+.testimonial-user {
 
     display: flex;
 
@@ -477,7 +469,7 @@
 
 }
 
-.testimonial-avatar{
+.testimonial-avatar {
 
     width: 60px;
 
@@ -489,7 +481,7 @@
 
 }
 
-.testimonial-avatar img{
+.testimonial-avatar img {
 
     width: 100%;
 
@@ -499,7 +491,7 @@
 
 }
 
-.testimonial-name{
+.testimonial-name {
 
     font-size: 18px;
 
@@ -507,7 +499,7 @@
 
 }
 
-.testimonial-role{
+.testimonial-role {
 
     color: var(--text-secondary);
 
@@ -515,7 +507,7 @@
 
 }
 
-.testimonial-rating{
+.testimonial-rating {
 
     margin-top: 24px;
 
@@ -523,7 +515,7 @@
 
 }
 
-.testimonial-text{
+.testimonial-text {
 
     margin-top: 16px;
 
@@ -537,19 +529,15 @@
    NEWSLETTER CARD
 ===================== */
 
-.newsletter{
+.newsletter {
 
     background:
 
-        linear-gradient(
-
-            180deg,
+        linear-gradient(180deg,
 
             #F8FAFC,
 
-            #FFFFFF
-
-        );
+            #FFFFFF);
 
     border-radius: 28px;
 
@@ -559,7 +547,7 @@
 
 }
 
-.newsletter-title{
+.newsletter-title {
 
     font-size: 42px;
 
@@ -567,7 +555,7 @@
 
 }
 
-.newsletter-subtitle{
+.newsletter-subtitle {
 
     max-width: 600px;
 
@@ -575,7 +563,7 @@
 
 }
 
-.newsletter-form{
+.newsletter-form {
 
     max-width: 650px;
 
@@ -587,7 +575,7 @@
 
 }
 
-.newsletter-form input{
+.newsletter-form input {
 
     flex: 1;
 
@@ -599,7 +587,7 @@
    FILTER PANEL
 ===================== */
 
-.filter-panel{
+.filter-panel {
 
     background: #FFFFFF;
 
@@ -611,7 +599,7 @@
 
 }
 
-.filter-title{
+.filter-title {
 
     font-size: 20px;
 
@@ -621,13 +609,13 @@
 
 }
 
-.filter-group{
+.filter-group {
 
     margin-bottom: 32px;
 
 }
 
-.filter-label{
+.filter-label {
 
     display: block;
 
@@ -643,7 +631,7 @@
    PROFILE CARD
 ===================== */
 
-.profile-card{
+.profile-card {
 
     background: #FFFFFF;
 
@@ -655,7 +643,7 @@
 
 }
 
-.profile-header{
+.profile-header {
 
     display: flex;
 
@@ -667,7 +655,7 @@
 
 }
 
-.profile-avatar{
+.profile-avatar {
 
     width: 90px;
 
@@ -679,7 +667,7 @@
 
 }
 
-.profile-avatar img{
+.profile-avatar img {
 
     width: 100%;
 
@@ -695,7 +683,7 @@
    BOOKING SUMMARY
 ===================== */
 
-.booking-summary{
+.booking-summary {
 
     background: #FFFFFF;
 
@@ -707,7 +695,7 @@
 
 }
 
-.booking-item{
+.booking-item {
 
     display: flex;
 
@@ -717,13 +705,11 @@
 
 }
 
-.booking-total{
+.booking-total {
 
     border-top:
 
-        1px solid
-
-        var(--border-color);
+        1px solid var(--border-color);
 
     padding-top: 20px;
 
@@ -739,11 +725,11 @@
    STATUS BADGES
 ===================== */
 
-.status-paid{
+.status-paid {
 
     background:
 
-        rgba(57,190,158,.1);
+        rgba(57, 190, 158, .1);
 
     color:
 
@@ -751,11 +737,11 @@
 
 }
 
-.status-pending{
+.status-pending {
 
     background:
 
-        rgba(245,158,11,.1);
+        rgba(245, 158, 11, .1);
 
     color:
 
@@ -763,11 +749,11 @@
 
 }
 
-.status-cancelled{
+.status-cancelled {
 
     background:
 
-        rgba(239,68,68,.1);
+        rgba(239, 68, 68, .1);
 
     color:
 
@@ -775,7 +761,7 @@
 
 }
 
-.about-image{
+.about-image {
 
     display: flex;
 
@@ -784,7 +770,7 @@
 }
 
 
-.about-image img{
+.about-image img {
 
     width: 250px;
 

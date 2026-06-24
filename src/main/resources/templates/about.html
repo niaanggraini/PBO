@@ -1,120 +1,151 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ARUNGI | About Us</title>
 
-    <link rel="stylesheet"
-          th:href="@{/css/globals.css}">
+    <link rel="stylesheet" th:href="@{/css/globals.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/layout.css}">
+    <link rel="stylesheet" th:href="@{/css/layout.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/components.css}">
+    <link rel="stylesheet" th:href="@{/css/components.css}">
 
 </head>
 
 <body>
 
 
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
 
-<div th:replace="~{fragments/navbar :: navbar}">
-</div>
-
-
-
-
-<!-- PAGE HEADER -->
-
-<section class="page-header">
-
-    <div class="container">
-
-
-        <h1 class="page-title">
-
-            About ARUNGI
-
-        </h1>
-
-
-        <p class="page-subtitle">
-
-            ARUNGI is a travel booking platform designed to help travelers discover
-            curated destinations and unforgettable journeys across Indonesia and beyond.
-
-        </p>
-
-
+    <div th:replace="~{fragments/navbar :: navbar}">
     </div>
 
-</section>
+
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div class="container">
+
+
+            <h1 class="page-title">
+
+                About ARUNGI
+
+            </h1>
+
+
+            <p class="page-subtitle">
+
+                ARUNGI is a travel booking platform designed to help travelers discover
+                curated destinations and unforgettable journeys across Indonesia and beyond.
+
+            </p>
+
+
+        </div>
+
+    </section>
 
 
 
 
 
-<!-- OUR STORY -->
+    <!-- OUR STORY -->
 
-<section>
+    <section>
 
-    <div class="container">
-
-
-        <div class="grid-2">
+        <div class="container">
 
 
-            <div class="about-image">
+            <div class="grid-2">
 
-                <img
 
-                th:src="@{/images/logo.png}"
+                <div class="about-image">
 
-                alt="About ARUNGI">
+                    <img th:src="@{/images/logo.png}" alt="About ARUNGI">
+
+                </div>
+
+
+
+                <div>
+
+                    <h2 class="section-title">
+
+                        Our Story
+
+                    </h2>
+
+
+                    <p style="margin-top:30px;">
+
+                        ARUNGI was created with one goal:
+
+                        to make traveling easier, safer,
+
+                        and more memorable.
+
+
+                    </p>
+
+
+                    <p style="margin-top:20px;">
+
+                        We curate destinations, travel packages,
+
+                        hotels, and transportation options
+
+                        so travelers can enjoy seamless experiences
+
+                        from booking to adventure.
+
+                    </p>
+
+
+                </div>
+
+
 
             </div>
 
 
+        </div>
 
-            <div>
+    </section>
+
+
+
+
+
+
+    <!-- WHY CHOOSE US -->
+
+    <section class="bg-secondary">
+
+        <div class="container">
+
+
+            <div class="section-header flex-column center">
+
 
                 <h2 class="section-title">
 
-                    Our Story
+                    Why Choose ARUNGI
 
                 </h2>
 
 
-                <p style="margin-top:30px;">
+                <p class="section-subtitle">
 
-                    ARUNGI was created with one goal:
-
-                    to make traveling easier, safer,
-
-                    and more memorable.
-
-
-                </p>
-
-
-                <p style="margin-top:20px;">
-
-                    We curate destinations, travel packages,
-
-                    hotels, and transportation options
-
-                    so travelers can enjoy seamless experiences
-
-                    from booking to adventure.
+                    Travel smarter with us.
 
                 </p>
 
@@ -123,129 +154,130 @@
 
 
 
-        </div>
+            <div class="why-grid">
 
 
-    </div>
-
-</section>
+                <div class="feature-card">
 
 
+                    <div class="feature-icon">
+
+                        🌎
+
+                    </div>
 
 
+                    <h3 class="feature-title">
+
+                        Curated Destinations
+
+                    </h3>
 
 
-<!-- WHY CHOOSE US -->
+                    <p class="feature-description">
 
-<section class="bg-secondary">
+                        Handpicked places and experiences.
 
-    <div class="container">
+                    </p>
 
-
-        <div class="section-header flex-column center">
-
-
-            <h2 class="section-title">
-
-                Why Choose ARUNGI
-
-            </h2>
-
-
-            <p class="section-subtitle">
-
-                Travel smarter with us.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="why-grid">
-
-
-            <div class="feature-card">
-
-
-                <div class="feature-icon">
-
-                    🌎
 
                 </div>
 
 
-                <h3 class="feature-title">
-
-                    Curated Destinations
-
-                </h3>
 
 
-                <p class="feature-description">
 
-                    Handpicked places and experiences.
+                <div class="feature-card">
 
-                </p>
+
+                    <div class="feature-icon">
+
+                        🔒
+
+                    </div>
+
+
+                    <h3 class="feature-title">
+
+                        Secure Booking
+
+                    </h3>
+
+
+                    <p class="feature-description">
+
+                        Safe payments and trusted services.
+
+                    </p>
+
+
+                </div>
+
+
+
+
+
+                <div class="feature-card">
+
+
+                    <div class="feature-icon">
+
+                        💰
+
+                    </div>
+
+
+                    <h3 class="feature-title">
+
+                        Best Price
+
+                    </h3>
+
+
+                    <p class="feature-description">
+
+                        Competitive prices with great value.
+
+                    </p>
+
+
+                </div>
 
 
             </div>
 
 
+        </div>
 
-
-
-            <div class="feature-card">
-
-
-                <div class="feature-icon">
-
-                    🔒
-
-                </div>
-
-
-                <h3 class="feature-title">
-
-                    Secure Booking
-
-                </h3>
-
-
-                <p class="feature-description">
-
-                    Safe payments and trusted services.
-
-                </p>
-
-
-            </div>
+    </section>
 
 
 
 
 
-            <div class="feature-card">
+
+    <!-- MISSION -->
+
+    <section>
+
+        <div class="container">
 
 
-                <div class="feature-icon">
-
-                    💰
-
-                </div>
+            <div class="newsletter">
 
 
-                <h3 class="feature-title">
+                <h2 class="newsletter-title">
 
-                    Best Price
+                    Our Mission
 
-                </h3>
+                </h2>
 
 
-                <p class="feature-description">
+                <p class="newsletter-subtitle">
 
-                    Competitive prices with great value.
+                    To inspire people to explore the world
+
+                    through seamless and memorable travel experiences.
 
                 </p>
 
@@ -255,58 +287,17 @@
 
         </div>
 
+    </section>
 
+
+
+
+
+
+    <!-- FOOTER -->
+
+    <div th:replace="~{fragments/footer :: footer}">
     </div>
-
-</section>
-
-
-
-
-
-
-<!-- MISSION -->
-
-<section>
-
-    <div class="container">
-
-
-        <div class="newsletter">
-
-
-            <h2 class="newsletter-title">
-
-                Our Mission
-
-            </h2>
-
-
-            <p class="newsletter-subtitle">
-
-                To inspire people to explore the world
-
-                through seamless and memorable travel experiences.
-
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-
-
-
-<!-- FOOTER -->
-
-<div th:replace="~{fragments/footer :: footer}">
-</div>
 
 
 </body>

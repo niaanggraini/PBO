@@ -1,129 +1,121 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <body>
 
-<nav class="navbar"
-     th:fragment="navbar">
+    <nav class="navbar" th:fragment="navbar">
 
-    <div class="container navbar-container">
+        <div class="container navbar-container">
 
-        <!-- Logo -->
+            <!-- Logo -->
 
-        <a th:href="@{/}"
-           class="logo">
+            <a th:href="@{/}" class="logo">
 
-            <img src="/images/logonav.png"
-                 alt="ARUNGI Logo">
+                <img src="/images/logonav.png" alt="ARUNGI Logo">
 
-        </a>
+            </a>
 
-        <!-- Menu -->
+            <!-- Menu -->
 
-        <ul class="nav-menu">
+            <ul class="nav-menu">
 
-            <li>
+                <li>
 
-                <a th:href="@{/}">
+                    <a th:href="@{/}">
 
-                    Home
+                        Home
 
-                </a>
+                    </a>
 
-            </li>
+                </li>
 
-            <li>
+                <li>
 
-                <a th:href="@{/destinations}">
+                    <a th:href="@{/destinations}">
 
-                    Destinations
+                        Destinations
 
-                </a>
+                    </a>
 
-            </li>
+                </li>
 
-            <li>
+                <li>
 
-                <a th:href="@{/packages}">
+                    <a th:href="@{/packages}">
 
-                    Packages
+                        Packages
 
-                </a>
+                    </a>
 
-            </li>
+                </li>
 
-            <li>
+                <li>
 
-                <a th:href="@{/about}">
+                    <a th:href="@{/about}">
 
-                    About
+                        About
 
-                </a>
+                    </a>
 
-            </li>
+                </li>
 
-        </ul>
+            </ul>
 
-        <!-- Right Side -->
+            <!-- Right Side -->
 
-        <div class="nav-actions">
+            <div class="nav-actions">
 
-            <!-- Search -->
+                <!-- Search -->
 
-            <button class="nav-search-btn">
+                <button class="nav-search-btn">
 
-                <i class="fa-solid fa-magnifying-glass">
+                    <i class="fa-solid fa-magnifying-glass">
 
-                </i>
+                    </i>
 
-            </button>
+                </button>
 
-            <!-- Belum Login -->
+                <!-- Belum Login -->
 
-            <th:block th:if="${!isLoggedIn}">
+                <th:block th:if="${!isLoggedIn}">
 
-                <a th:href="@{/login}"
-                   class="btn-outline">
+                    <a th:href="@{/login}" class="btn-outline">
 
-                    Login
+                        Login
 
-                </a>
+                    </a>
 
-                <a th:href="@{/register}"
-                   class="btn-primary">
+                    <a th:href="@{/register}" class="btn-primary">
 
-                    Register
+                        Register
 
-                </a>
+                    </a>
 
-            </th:block>
+                </th:block>
 
-            <!-- Sudah Login -->
+                <!-- Sudah Login -->
 
-            <th:block th:if="${isLoggedIn}">
+                <th:block th:if="${isLoggedIn}">
 
-                <a th:href="@{/profile}"
-                   class="btn-primary">
+                    <a th:href="@{/profile}" class="btn-primary">
 
-                    Profile
+                        Profile
 
-                </a>
+                    </a>
 
-                <a th:href="@{/logout}"
-                   class="btn-outline">
+                    <a th:href="@{/logout}" class="btn-outline">
 
-                    Logout
+                        Logout
 
-                </a>
+                    </a>
 
-            </th:block>
+                </th:block>
+
+            </div>
 
         </div>
 
-    </div>
-
-</nav>
+    </nav>
 
 </body>
 

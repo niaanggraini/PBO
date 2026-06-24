@@ -1,27 +1,21 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ARUNGI | Home</title>
 
-    <link rel="stylesheet"
-          th:href="@{/css/globals.css}">
+    <link rel="stylesheet" th:href="@{/css/globals.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/layout.css}">
+    <link rel="stylesheet" th:href="@{/css/layout.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/components.css}">
+    <link rel="stylesheet" th:href="@{/css/components.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/home.css}">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
 
 </head>
 
@@ -44,11 +38,7 @@
 
             <div class="hero-banner">
 
-                <img
-
-                th:src="@{/images/banner1.jpg}"
-
-                alt="Hero Banner">
+                <img th:src="@{/images/banner1.jpg}" alt="Hero Banner">
 
 
                 <div class="hero-overlay">
@@ -84,9 +74,9 @@
 
             <!-- Search Card -->
 
-            
 
-            </div>
+
+        </div>
 
 
         </div>
@@ -130,17 +120,12 @@
             <div class="destinations-grid">
 
 
-                <div class="destination-card"
-                     th:each="destination : ${destinations}">
+                <div class="destination-card" th:each="destination : ${destinations}">
 
 
                     <div class="destination-image">
 
-                        <img
-
-                        th:src="@{'/images/' + ${destination.image}}"
-
-                        th:alt="${destination.name}">
+                        <img th:src="@{'/images/' + ${destination.image}}" th:alt="${destination.name}">
 
                     </div>
 
@@ -149,16 +134,14 @@
                     <div class="destination-content">
 
 
-                        <span class="destination-country"
-                              th:text="${destination.country}">
+                        <span class="destination-country" th:text="${destination.country}">
 
                             Indonesia
 
                         </span>
 
 
-                        <h3 class="destination-title"
-                            th:text="${destination.name}">
+                        <h3 class="destination-title" th:text="${destination.name}">
 
                             Bali
 
@@ -189,11 +172,7 @@
                         </div>
 
 
-                        <a
-
-                        th:href="@{/packages(destination=${destination.name})}"
-
-                        class="btn-primary destination-btn">
+                        <a th:href="@{/packages(destination=${destination.name})}" class="btn-primary destination-btn">
 
                             Explore
 

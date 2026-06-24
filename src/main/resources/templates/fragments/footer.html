@@ -1,212 +1,194 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <body>
 
-<footer class="footer"
-        th:fragment="footer">
+    <footer class="footer" th:fragment="footer">
 
-    <div class="container">
-
-
-        <div class="footer-grid">
+        <div class="container">
 
 
-            <!-- Brand -->
-
-            <div class="footer-brand">
+            <div class="footer-grid">
 
 
-                <h2 class="logo">
+                <!-- Brand -->
 
-                    <span class="logo-text">
-
-                        ARUNGI
-
-                    </span>
+                <div class="footer-brand">
 
 
-                </h2>
+                    <h2 class="logo">
 
+                        <span class="logo-text">
+
+                            ARUNGI
+
+                        </span>
+
+
+                    </h2>
+
+
+
+                    <p>
+
+                        Arungi your dream journey.
+
+                    </p>
+
+
+                </div>
+
+
+
+
+                <!-- Company -->
+
+                <div>
+
+                    <h4 class="footer-title">
+
+                        Company
+
+                    </h4>
+
+
+                    <a href="#" class="footer-link">
+
+                        About
+
+                    </a>
+
+
+                    <a href="#" class="footer-link">
+
+                        Careers
+
+                    </a>
+
+
+                    <a href="#" class="footer-link">
+
+                        Contact
+
+                    </a>
+
+                </div>
+
+
+
+
+                <!-- Explore -->
+
+                <div>
+
+                    <h4 class="footer-title">
+
+                        Explore
+
+                    </h4>
+
+
+                    <a th:href="@{/destinations}" class="footer-link">
+
+                        Destinations
+
+                    </a>
+
+
+                    <a th:href="@{/packages}" class="footer-link">
+
+                        Packages
+
+                    </a>
+
+                </div>
+
+
+
+
+                <!-- Support -->
+
+                <div>
+
+                    <h4 class="footer-title">
+
+                        Support
+
+                    </h4>
+
+
+                    <a href="#" class="footer-link">
+
+                        Help Center
+
+                    </a>
+
+
+                    <a href="#" class="footer-link">
+
+                        Terms
+
+                    </a>
+
+
+                    <a href="#" class="footer-link">
+
+                        Privacy Policy
+
+                    </a>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+            <!-- Bottom -->
+
+            <div class="footer-bottom">
 
 
                 <p>
 
-                    Arungi your dream journey.
+                    © 2026 ARUNGI.
+
+                    All rights reserved.
 
                 </p>
 
 
-            </div>
+                <div class="social-icons">
 
+                    <a href="#">
 
+                        📘
 
+                    </a>
 
-            <!-- Company -->
+                    <a href="#">
 
-            <div>
+                        📸
 
-                <h4 class="footer-title">
+                    </a>
 
-                    Company
+                    <a href="#">
 
-                </h4>
+                        🐦
 
+                    </a>
 
-                <a href="#"
+                </div>
 
-                   class="footer-link">
-
-                    About
-
-                </a>
-
-
-                <a href="#"
-
-                   class="footer-link">
-
-                    Careers
-
-                </a>
-
-
-                <a href="#"
-
-                   class="footer-link">
-
-                    Contact
-
-                </a>
-
-            </div>
-
-
-
-
-            <!-- Explore -->
-
-            <div>
-
-                <h4 class="footer-title">
-
-                    Explore
-
-                </h4>
-
-
-                <a th:href="@{/destinations}"
-
-                   class="footer-link">
-
-                    Destinations
-
-                </a>
-
-
-                <a th:href="@{/packages}"
-
-                   class="footer-link">
-
-                    Packages
-
-                </a>
-
-            </div>
-
-
-
-
-            <!-- Support -->
-
-            <div>
-
-                <h4 class="footer-title">
-
-                    Support
-
-                </h4>
-
-
-                <a href="#"
-
-                   class="footer-link">
-
-                    Help Center
-
-                </a>
-
-
-                <a href="#"
-
-                   class="footer-link">
-
-                    Terms
-
-                </a>
-
-
-                <a href="#"
-
-                   class="footer-link">
-
-                    Privacy Policy
-
-                </a>
-
-            </div>
-
-
-
-        </div>
-
-
-
-
-        <!-- Bottom -->
-
-        <div class="footer-bottom">
-
-
-            <p>
-
-                © 2026 ARUNGI.
-
-                All rights reserved.
-
-            </p>
-
-
-            <div class="social-icons">
-
-                <a href="#">
-
-                    📘
-
-                </a>
-
-                <a href="#">
-
-                    📸
-
-                </a>
-
-                <a href="#">
-
-                    🐦
-
-                </a>
 
             </div>
 
 
         </div>
 
-
-    </div>
-
-</footer>
+    </footer>
 
 </body>
 

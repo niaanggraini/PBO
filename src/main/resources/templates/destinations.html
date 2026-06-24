@@ -1,214 +1,125 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ARUNGI | Destinations</title>
 
-    <link rel="stylesheet"
-          th:href="@{/css/globals.css}">
+    <link rel="stylesheet" th:href="@{/css/globals.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/layout.css}">
+    <link rel="stylesheet" th:href="@{/css/layout.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/components.css}">
+    <link rel="stylesheet" th:href="@{/css/components.css}">
 
-    <link rel="stylesheet"
-          th:href="@{/css/package.css}">
+    <link rel="stylesheet" th:href="@{/css/package.css}">
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
 
-<div th:replace="~{fragments/navbar :: navbar}">
-</div>
-
-
-
-<!-- PAGE HEADER -->
-
-<section class="page-header">
-
-    <div class="container">
-
-        <h1 class="page-title">
-
-            Explore Destinations
-
-        </h1>
-
-        <p class="page-subtitle">
-
-            Discover breathtaking destinations
-            across Indonesia and around the world.
-
-        </p>
-
-
-
-        <!-- SEARCH -->
-
-        <div class="search-section">
-
-            <form th:action="@{/destinations}"
-                  method="get"
-                  class="search-wrapper">
-
-                <div class="search-box">
-
-                    <i class="fa-solid fa-magnifying-glass search-icon">
-                    </i>
-
-                    <input
-                            type="text"
-                            name="keyword"
-                            class="search-input"
-                            placeholder="Search destination..."
-                            th:value="${keyword}">
-
-                </div>
-
-                <button type="submit"
-                        class="btn-primary">
-
-                    Search
-
-                </button>
-
-            </form>
-
-
-
-            <!-- FILTER -->
-
-            <div class="filter-wrapper">
-
-                <a th:href="@{/destinations}"
-                    th:class="${selectedCategory == null ? 'filter-btn active' : 'filter-btn'}">
-
-                    All Destinations
-
-                </a>
-
-            <a th:href="@{/destinations(category='Island')}"
-                th:class="${selectedCategory == 'Island' ? 'filter-btn active' : 'filter-btn'}">
-
-                    Island
-
-            </a>
-
-                <a th:href="@{/destinations(category='Coastal')}"
-                th:class="${selectedCategory == 'Coastal' ? 'filter-btn active' : 'filter-btn'}">
-
-                Coastal
-
-            </a>
-
-    <a th:href="@{/destinations(category='Mountain')}"
-       th:class="${selectedCategory == 'Mountain' ? 'filter-btn active' : 'filter-btn'}">
-
-        Mountain
-
-    </a>
-
-    <a th:href="@{/destinations(category='Cultural')}"
-       th:class="${selectedCategory == 'Cultural' ? 'filter-btn active' : 'filter-btn'}">
-
-        Cultural
-
-    </a>
-
-    <a th:href="@{/destinations(category='Adventure')}"
-       th:class="${selectedCategory == 'Adventure' ? 'filter-btn active' : 'filter-btn'}">
-
-        Adventure
-
-    </a>
-
-</div>
-
-        </div>
-
+    <div th:replace="~{fragments/navbar :: navbar}">
     </div>
 
-</section>
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <div class="container">
+
+            <h1 class="page-title">
+
+                Explore Destinations
+
+            </h1>
+
+            <p class="page-subtitle">
+
+                Discover breathtaking destinations
+                across Indonesia and around the world.
+
+            </p>
 
 
 
-<!-- DESTINATIONS -->
+            <!-- SEARCH -->
 
-<section class="section-sm">
+            <div class="search-section">
 
-    <div class="container">
+                <form th:action="@{/destinations}" method="get" class="search-wrapper">
 
-        <div class="destinations-grid">
+                    <div class="search-box">
 
-            <div class="destination-card"
-                 th:each="destination : ${destinations}">
+                        <i class="fa-solid fa-magnifying-glass search-icon">
+                        </i>
 
-                <div class="destination-image">
-
-                    <img
-                            th:src="@{'/images/' + ${destination.image}}"
-                            th:alt="${destination.name}">
-
-                </div>
-
-                <div class="destination-content">
-
-                    <span class="destination-country"
-                          th:text="${destination.country}">
-
-                        Indonesia
-
-                    </span>
-
-                    <h3 class="destination-title"
-                        th:text="${destination.name}">
-
-                        Bali
-
-                    </h3>
-
-                    <p th:text="${destination.description}">
-
-                        Destination Description
-
-                    </p>
-
-                    <div class="destination-footer">
-
-                        <div class="destination-price">
-
-                            Category :
-
-                            <strong
-                                th:text="${destination.category}">
-
-                                Island
-
-                            </strong>
-
-                        </div>
+                        <input type="text" name="keyword" class="search-input" placeholder="Search destination..."
+                            th:value="${keyword}">
 
                     </div>
 
-                    <a th:href="@{/packages(destination=${destination.name})}"
-                       class="btn-primary destination-btn">
+                    <button type="submit" class="btn-primary">
 
-                        Explore
+                        Search
+
+                    </button>
+
+                </form>
+
+
+
+                <!-- FILTER -->
+
+                <div class="filter-wrapper">
+
+                    <a th:href="@{/destinations}"
+                        th:class="${selectedCategory == null ? 'filter-btn active' : 'filter-btn'}">
+
+                        All Destinations
+
+                    </a>
+
+                    <a th:href="@{/destinations(category='Island')}"
+                        th:class="${selectedCategory == 'Island' ? 'filter-btn active' : 'filter-btn'}">
+
+                        Island
+
+                    </a>
+
+                    <a th:href="@{/destinations(category='Coastal')}"
+                        th:class="${selectedCategory == 'Coastal' ? 'filter-btn active' : 'filter-btn'}">
+
+                        Coastal
+
+                    </a>
+
+                    <a th:href="@{/destinations(category='Mountain')}"
+                        th:class="${selectedCategory == 'Mountain' ? 'filter-btn active' : 'filter-btn'}">
+
+                        Mountain
+
+                    </a>
+
+                    <a th:href="@{/destinations(category='Cultural')}"
+                        th:class="${selectedCategory == 'Cultural' ? 'filter-btn active' : 'filter-btn'}">
+
+                        Cultural
+
+                    </a>
+
+                    <a th:href="@{/destinations(category='Adventure')}"
+                        th:class="${selectedCategory == 'Adventure' ? 'filter-btn active' : 'filter-btn'}">
+
+                        Adventure
 
                     </a>
 
@@ -218,37 +129,104 @@
 
         </div>
 
+    </section>
 
 
-        <!-- EMPTY STATE -->
 
-        <div th:if="${#lists.isEmpty(destinations)}"
-             class="empty-state">
+    <!-- DESTINATIONS -->
 
-            <h3>
+    <section class="section-sm">
 
-                No Destinations Found
+        <div class="container">
 
-            </h3>
+            <div class="destinations-grid">
 
-            <p>
+                <div class="destination-card" th:each="destination : ${destinations}">
 
-                Try another keyword or category.
+                    <div class="destination-image">
 
-            </p>
+                        <img th:src="@{'/images/' + ${destination.image}}" th:alt="${destination.name}">
+
+                    </div>
+
+                    <div class="destination-content">
+
+                        <span class="destination-country" th:text="${destination.country}">
+
+                            Indonesia
+
+                        </span>
+
+                        <h3 class="destination-title" th:text="${destination.name}">
+
+                            Bali
+
+                        </h3>
+
+                        <p th:text="${destination.description}">
+
+                            Destination Description
+
+                        </p>
+
+                        <div class="destination-footer">
+
+                            <div class="destination-price">
+
+                                Category :
+
+                                <strong th:text="${destination.category}">
+
+                                    Island
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <a th:href="@{/packages(destination=${destination.name})}" class="btn-primary destination-btn">
+
+                            Explore
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- EMPTY STATE -->
+
+            <div th:if="${#lists.isEmpty(destinations)}" class="empty-state">
+
+                <h3>
+
+                    No Destinations Found
+
+                </h3>
+
+                <p>
+
+                    Try another keyword or category.
+
+                </p>
+
+            </div>
 
         </div>
 
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <div th:replace="~{fragments/footer :: footer}">
     </div>
-
-</section>
-
-
-
-<!-- FOOTER -->
-
-<div th:replace="~{fragments/footer :: footer}">
-</div>
 
 </body>
 
