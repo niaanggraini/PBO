@@ -3,6 +3,7 @@ package com.pbo.arungi.controller;
 import com.pbo.arungi.model.User;
 import com.pbo.arungi.repository.UserRepository;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,9 +16,14 @@ import java.util.Optional;
 public class AuthController {
 
     private final UserRepository userRepository;
+    private final BCryptPasswordEncoder passwordEncoder;
 
-    public AuthController(UserRepository userRepository) {
+    public AuthController(
+            UserRepository userRepository,
+            BCryptPasswordEncoder passwordEncoder) {
+
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/login")
@@ -42,7 +48,8 @@ public class AuthController {
             return "login";
         }
 
-        Optional<User> userOptional = userRepository.findByEmail(email);
+        Optional<User> userOptional =
+                userRepository.findByEmail(email);
 
         if (userOptional.isEmpty()) {
 
@@ -55,7 +62,9 @@ public class AuthController {
 
         User user = userOptional.get();
 
-        if (!user.getPassword().equals(password)) {
+        if (!passwordEncoder.matches(
+                password,
+                user.getPassword())) {
 
             model.addAttribute(
                     "error",
@@ -131,7 +140,7 @@ public class AuthController {
         User user = new User(
                 fullName,
                 email,
-                password);
+                passwordEncoder.encode(password));
 
         userRepository.save(user);
 
@@ -150,4 +159,5 @@ public class AuthController {
 
         return "redirect:/";
     }
+
 }
