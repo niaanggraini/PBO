@@ -48,13 +48,14 @@ VALUES
 -- =====================================
 
 INSERT INTO travel_package
-(name, destination, description, duration, image, price)
+(name, destination, package_type, description, duration, image, price)
 
 VALUES
 
 (
 'Bali Adventure',
 'Bali',
+'Domestic',
 'Explore Bali for 5 days',
 5,
 'bali.jpg',
@@ -64,6 +65,7 @@ VALUES
 (
 'Bali Honeymoon',
 'Bali',
+'Domestic',
 'Romantic getaway in Bali',
 5,
 'bali.jpg',
@@ -73,6 +75,7 @@ VALUES
 (
 'Lombok Explorer',
 'Lombok',
+'Domestic',
 'Discover beaches and Mount Rinjani',
 4,
 'lombok.jpg',
@@ -82,6 +85,7 @@ VALUES
 (
 'Raja Ampat Explorer',
 'Raja Ampat',
+'Domestic',
 'Experience paradise islands',
 7,
 'raja-ampat.jpg',
@@ -91,6 +95,7 @@ VALUES
 (
 'Labuan Bajo Escape',
 'Labuan Bajo',
+'Domestic',
 'Explore Komodo National Park',
 3,
 'labuan-bajo.jpg',

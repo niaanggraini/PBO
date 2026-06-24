@@ -21,7 +21,17 @@ public class TravelPackage {
 
     private int duration;
 
+    private String packageType;
+
     public TravelPackage() {
+    }
+
+    public String getPackageType() {
+    return packageType;
+    }
+
+    public void setPackageType(String packageType) {
+    this.packageType = packageType;
     }
 
     public Long getId() {
@@ -79,4 +89,5 @@ public class TravelPackage {
     public void setDuration(int duration) {
         this.duration = duration;
     }
+    
 }
