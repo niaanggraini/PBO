@@ -1,412 +1,135 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARUNGI | Payment</title>
-
-    <link rel="stylesheet"
-          th:href="@{/css/globals.css}">
-
-    <link rel="stylesheet"
-          th:href="@{/css/layout.css}">
-
-    <link rel="stylesheet"
-          th:href="@{/css/components.css}">
-
-    <link rel="stylesheet"
-          th:href="@{/css/package.css}">
-
+    <link rel="stylesheet" th:href="@{/css/globals.css}">
+    <link rel="stylesheet" th:href="@{/css/layout.css}">
+    <link rel="stylesheet" th:href="@{/css/components.css}">
+    <link rel="stylesheet" th:href="@{/css/package.css}">
 </head>
 
 <body>
 
-
-<!-- NAVBAR -->
-
-<div th:replace="~{fragments/navbar :: navbar}">
-</div>
-
-
-
+<div th:replace="~{fragments/navbar :: navbar}"></div>
 
 <section class="package-detail">
-
     <div class="container">
-
-
         <div class="package-detail-layout">
 
-
-
             <!-- LEFT -->
-
             <div>
-
-
                 <div class="detail-section">
-
-                    <h2>
-
-                        Select Payment Method
-
-                    </h2>
-
-
-
-                    <!-- BANK -->
-
-                    <div class="review-card">
-
-                        <input
-
-                        type="radio"
-
-                        name="payment"
-
-                        checked>
-
-
-                        <strong>
-
-                            Bank Transfer
-
-                        </strong>
-
-
-                        <p>
-
-                            BCA, BNI, Mandiri
-
-                        </p>
-
-                    </div>
-
-
-
-                    <!-- EWALLET -->
-
-                    <div
-
-                    class="review-card"
-
-                    style="margin-top:20px;">
-
-
-                        <input
-
-                        type="radio"
-
-                        name="payment">
-
-
-                        <strong>
-
-                            E-Wallet
-
-                        </strong>
-
-
-                        <p>
-
-                            GoPay, OVO, DANA
-
-                        </p>
-
-
-                    </div>
-
-
-
-
-
-                    <!-- CREDIT CARD -->
-
-                    <div
-
-                    class="review-card"
-
-                    style="margin-top:20px;">
-
-
-                        <input
-
-                        type="radio"
-
-                        name="payment">
-
-
-                        <strong>
-
-                            Credit Card
-
-                        </strong>
-
-
-                        <p>
-
-                            Visa, Mastercard
-
-                        </p>
-
-
-                    </div>
-
-
-
-
-
-                    <!-- Card Form -->
-
-                    <div class="detail-section">
-
-
-                        <h3>
-
-                            Payment Details
-
-                        </h3>
-
-
-
-                        <form class="booking-form">
-
-
-                            <label>
-
-                                Card Holder
-
-                            </label>
-
-                            <input
-
-                            class="input-field"
-
-                            type="text"
-
-                            placeholder="John Doe">
-
-
-
-
-
-                            <label>
-
-                                Card Number
-
-                            </label>
-
-                            <input
-
-                            class="input-field"
-
-                            type="text"
-
-                            placeholder="1234 5678 9012 3456">
-
-
-
-
-
-                            <label>
-
-                                Expiration Date
-
-                            </label>
-
-                            <input
-
-                            class="input-field"
-
-                            type="month">
-
-
-
-
-
-                            <label>
-
-                                CVV
-
-                            </label>
-
-                            <input
-
-                            class="input-field"
-
-                            type="password"
-
-                            placeholder="***">
-
-
-                        </form>
-
-
-                    </div>
-
-
+                    <h2>Select Payment Method</h2>
+
+                    <p th:if="${error}" th:text="${error}"
+                       style="color:#C0392B; margin-bottom:20px;"></p>
+
+                    <form th:action="@{/payment}" method="post">
+
+                        <input type="hidden" name="bookingId" th:value="${booking.id}">
+
+                        <!-- Bank Transfer -->
+                        <label class="review-card" style="display:block; cursor:pointer;">
+                            <input type="radio" name="paymentMethod" value="Bank Transfer" checked>
+                            <strong>Bank Transfer</strong>
+                            <p>BCA, BNI, Mandiri</p>
+                        </label>
+
+                        <!-- E-Wallet -->
+                        <label class="review-card" style="display:block; margin-top:20px; cursor:pointer;">
+                            <input type="radio" name="paymentMethod" value="E-Wallet">
+                            <strong>E-Wallet</strong>
+                            <p>GoPay, OVO, DANA</p>
+                        </label>
+
+                        <!-- Payment Detail -->
+                        <div id="paymentDetail" class="detail-section" style="margin-top:20px;">
+                            <h3>Payment Details</h3>
+
+                            <div id="detailBankTransfer">
+                                <p>Transfer ke salah satu rekening berikut:</p>
+                                <div class="review-card" style="margin-top:12px;">
+                                    <p><strong>BCA</strong> — 1234567890 a/n Arungi Travel</p>
+                                </div>
+                                <div class="review-card" style="margin-top:8px;">
+                                    <p><strong>BNI</strong> — 9876543210 a/n Arungi Travel</p>
+                                </div>
+                                <div class="review-card" style="margin-top:8px;">
+                                    <p><strong>Mandiri</strong> — 1122334455 a/n Arungi Travel</p>
+                                </div>
+                            </div>
+
+                            <div id="detailEWallet" style="display:none;">
+                                <p>Transfer ke salah satu e-wallet berikut:</p>
+                                <div class="review-card" style="margin-top:12px;">
+                                    <p><strong>GoPay</strong> — 0812-3456-7890 a/n Arungi Travel</p>
+                                </div>
+                                <div class="review-card" style="margin-top:8px;">
+                                    <p><strong>OVO</strong> — 0812-3456-7890 a/n Arungi Travel</p>
+                                </div>
+                                <div class="review-card" style="margin-top:8px;">
+                                    <p><strong>DANA</strong> — 0812-3456-7890 a/n Arungi Travel</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-block"
+                                style="width:100%; margin-top:30px;">
+                            Confirm Payment
+                        </button>
+                    </form>
                 </div>
-
-
             </div>
 
-
-
-
-
-
             <!-- RIGHT -->
-
             <aside class="booking-card">
-
-
-                <h3>
-
-                    Booking Summary
-
-                </h3>
-
-
-
+                <h3>Booking Summary</h3>
 
                 <div class="booking-item">
-
-                    <span>
-
-                        Package
-
-                    </span>
-
-
-                    <strong>
-
-                        Bali Adventure
-
-                    </strong>
-
+                    <span>Package</span>
+                    <strong th:text="${booking.travelPackage.name}">Package Name</strong>
                 </div>
-
-
-
-
 
                 <div class="booking-item">
-
-                    <span>
-
-                        Travelers
-
-                    </span>
-
-
-                    <strong>
-
-                        2 Persons
-
-                    </strong>
-
+                    <span>Travelers</span>
+                    <strong th:text="${booking.travelers} + ' Person(s)'">1 Person</strong>
                 </div>
-
-
-
-
 
                 <div class="booking-item">
-
-                    <span>
-
-                        Departure
-
-                    </span>
-
-
-                    <strong>
-
-                        25 June 2026
-
-                    </strong>
-
+                    <span>Departure</span>
+                    <strong th:text="${#temporals.format(booking.departureDate, 'dd MMMM yyyy')}">Date</strong>
                 </div>
-
-
-
-
 
                 <div class="booking-total">
-
-
                     Total
-
-
-                    <strong>
-
-                        Rp 7.000.000
-
-                    </strong>
-
-
+                    <strong th:text="'Rp ' + ${#numbers.formatInteger(booking.totalPrice,0)}">Rp 0</strong>
                 </div>
 
-
-
-
-
-                <button
-
-                class="btn-primary btn-block"
-
-                style="width:100%;
-                       margin-top:30px;">
-
-                    Confirm Payment
-
-                </button>
-
-
-
-
-                <p
-
-                style="margin-top:20px;
-                       text-align:center;
-                       color:var(--text-secondary);">
-
-
+                <p style="margin-top:20px; text-align:center; color:var(--text-secondary);">
                     Secure payment protected by SSL/TLS
-
-
                 </p>
-
-
-
             </aside>
 
-
-
         </div>
-
-
     </div>
-
 </section>
 
+<div th:replace="~{fragments/footer :: footer}"></div>
 
+<script>
+    const radios = document.querySelectorAll('input[name="paymentMethod"]');
+    const bankDetail = document.getElementById('detailBankTransfer');
+    const ewalletDetail = document.getElementById('detailEWallet');
 
-
-
-<!-- FOOTER -->
-
-<div th:replace="~{fragments/footer :: footer}">
-</div>
-
-
+    radios.forEach(r => r.addEventListener('change', () => {
+        const isBankTransfer = document.querySelector('input[name="paymentMethod"]:checked').value === 'Bank Transfer';
+        bankDetail.style.display = isBankTransfer ? 'block' : 'none';
+        ewalletDetail.style.display = isBankTransfer ? 'none' : 'block';
+    }));
+</script>
 
 </body>
-
 </html>
