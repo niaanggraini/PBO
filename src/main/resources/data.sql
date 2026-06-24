@@ -1,4 +1,49 @@
 -- =====================================
+-- DESTINATIONS
+-- =====================================
+DELETE FROM travel_package;
+DELETE FROM destinations;
+
+INSERT INTO destinations
+(name, country, description, image, category)
+
+VALUES
+
+(
+'Bali',
+'Indonesia',
+'Tropical paradise with beaches and vibrant culture.',
+'bali.jpg',
+'Island'
+),
+
+(
+'Lombok',
+'Indonesia',
+'Beautiful beaches and Mount Rinjani.',
+'lombok.jpg',
+'Island'
+),
+
+(
+'Raja Ampat',
+'Indonesia',
+'World class marine paradise experience.',
+'raja-ampat.jpg',
+'Coastal'
+),
+
+(
+'Labuan Bajo',
+'Indonesia',
+'Gateway to Komodo National Park.',
+'labuan-bajo.jpg',
+'Adventure'
+);
+
+
+
+-- =====================================
 -- TRAVEL PACKAGES
 -- =====================================
 
@@ -51,3 +96,4 @@ VALUES
 'labuan-bajo.jpg',
 6200000
 );
+

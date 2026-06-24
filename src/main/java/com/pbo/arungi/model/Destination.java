@@ -18,6 +18,8 @@ public class Destination {
 
     private String image;
 
+    private String category;
+
     public Destination() {
     }
 
@@ -25,12 +27,14 @@ public class Destination {
             String name,
             String country,
             String description,
-            String image) {
+            String image,
+            String category) {
 
         this.name = name;
         this.country = country;
         this.description = description;
         this.image = image;
+        this.category = category;
     }
 
     public Long getId() {
@@ -53,6 +57,10 @@ public class Destination {
         return image;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -71,5 +79,9 @@ public class Destination {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
