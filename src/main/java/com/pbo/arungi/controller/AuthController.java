@@ -18,17 +18,13 @@ public class AuthController {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
-    public AuthController(
-            UserRepository userRepository,
-            BCryptPasswordEncoder passwordEncoder) {
-
+    public AuthController(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/login")
     public String login() {
-
         return "login";
     }
 
@@ -38,55 +34,32 @@ public class AuthController {
             @RequestParam String password,
             HttpSession session,
             Model model) {
-
         if (email.isBlank() || password.isBlank()) {
-
-            model.addAttribute(
-                    "error",
-                    "Email dan Password wajib diisi!");
-
+            model.addAttribute("error", "Email dan Password wajib diisi!");
             return "login";
         }
 
-        Optional<User> userOptional =
-                userRepository.findByEmail(email);
+        Optional<User> userOptional = userRepository.findByEmail(email);
 
         if (userOptional.isEmpty()) {
-
-            model.addAttribute(
-                    "error",
-                    "Email tidak terdaftar!");
-
+            model.addAttribute("error", "Email tidak terdaftar!");
             return "login";
         }
 
         User user = userOptional.get();
 
-        if (!passwordEncoder.matches(
-                password,
-                user.getPassword())) {
-
-            model.addAttribute(
-                    "error",
-                    "Password salah!");
-
+        if (!passwordEncoder.matches(password, user.getPassword())) {
+            model.addAttribute("error", "Password salah!");
             return "login";
         }
 
-        session.setAttribute(
-                "isLoggedIn",
-                true);
-
-        session.setAttribute(
-                "userEmail",
-                email);
-
+        session.setAttribute("isLoggedIn", true);
+        session.setAttribute("userEmail", email);
         return "redirect:/";
     }
 
     @GetMapping("/register")
     public String register() {
-
         return "register";
     }
 
@@ -98,65 +71,36 @@ public class AuthController {
             @RequestParam String confirmPassword,
             Model model) {
 
-        if (fullName.isBlank()
-                || email.isBlank()
-                || password.isBlank()
-                || confirmPassword.isBlank()) {
-
-            model.addAttribute(
-                    "error",
-                    "Semua field wajib diisi!");
-
+        if (fullName.isBlank() || email.isBlank() || password.isBlank() || confirmPassword.isBlank()) {
+            model.addAttribute("error", "Semua field wajib diisi!");
             return "register";
         }
 
         if (password.length() < 8) {
-
-            model.addAttribute(
-                    "error",
-                    "Password minimal 8 karakter!");
-
+            model.addAttribute("error", "Password minimal 8 karakter!");
             return "register";
         }
 
         if (!password.equals(confirmPassword)) {
-
-            model.addAttribute(
-                    "error",
-                    "Password dan Confirm Password harus sama!");
-
+            model.addAttribute("error", "Password dan Confirm Password harus sama!");
             return "register";
         }
 
         if (userRepository.findByEmail(email).isPresent()) {
-
-            model.addAttribute(
-                    "error",
-                    "Email sudah terdaftar!");
-
+            model.addAttribute("error", "Email sudah terdaftar!");
             return "register";
         }
 
-        User user = new User(
-                fullName,
-                email,
-                passwordEncoder.encode(password));
-
+        User user = new User(fullName, email, passwordEncoder.encode(password));
         userRepository.save(user);
 
-        model.addAttribute(
-                "success",
-                "Registrasi berhasil! Silakan login.");
-
+        model.addAttribute("success", "Registrasi berhasil! Silakan login.");
         return "login";
     }
 
     @GetMapping("/logout")
-    public String logout(
-            HttpSession session) {
-
+    public String logout(HttpSession session) {
         session.invalidate();
-
         return "redirect:/";
     }
 

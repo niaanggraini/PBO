@@ -1,81 +1,49 @@
 .profile-section {
-
     min-height: 80vh;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
 }
 
 .profile-card {
-
     width: 450px;
-
     background: #fff;
-
     padding: 40px;
-
     border-radius: 20px;
-
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-
     text-align: center;
-
 }
 
 .profile-avatar {
-
     font-size: 80px;
-
     margin-bottom: 20px;
-
 }
 
 .profile-email {
-
     color: #666;
-
     margin-top: 10px;
-
     margin-bottom: 30px;
-
 }
 
 .profile-menu {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 15px;
-
 }
 
 .profile-item {
-
     text-decoration: none;
-
     padding: 14px;
-
     border: 1px solid #ddd;
-
     border-radius: 12px;
-
     color: #333;
-
     transition: 0.3s;
 }
 
 .profile-item:hover {
-
     transform: translateY(-2px);
-
 }
 
 .logout {
-
     color: #e74c3c;
 }

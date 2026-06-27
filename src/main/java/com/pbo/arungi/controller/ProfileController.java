@@ -21,51 +21,30 @@ public class ProfileController {
         }
 
         @GetMapping("/profile")
-        public String profile(
-                        HttpSession session,
-                        Model model) {
-
+        public String profile(HttpSession session, Model model) {
                 Boolean isLoggedIn = (Boolean) session.getAttribute("isLoggedIn");
-
                 if (isLoggedIn == null || !isLoggedIn) {
                         return "redirect:/login";
                 }
-
                 String email = (String) session.getAttribute("userEmail");
-
                 model.addAttribute("email", email);
-
                 return "profile";
         }
 
         @GetMapping("/profile/settings")
-        public String settings(
-                        HttpSession session,
-                        Model model) {
-
+        public String settings(HttpSession session, Model model) {
                 Boolean isLoggedIn = (Boolean) session.getAttribute("isLoggedIn");
-
                 if (isLoggedIn == null || !isLoggedIn) {
                         return "redirect:/login";
                 }
-
                 String email = (String) session.getAttribute("userEmail");
 
                 Optional<User> userOptional = userRepository.findByEmail(email);
-
                 if (userOptional.isPresent()) {
-
                         User user = userOptional.get();
-
-                        model.addAttribute(
-                                        "fullName",
-                                        user.getFullName());
-
-                        model.addAttribute(
-                                        "email",
-                                        user.getEmail());
+                        model.addAttribute("fullName", user.getFullName());
+                        model.addAttribute("email", user.getEmail());
                 }
-
                 return "profile-settings";
         }
 
@@ -79,70 +58,39 @@ public class ProfileController {
                         Model model) {
 
                 Boolean isLoggedIn = (Boolean) session.getAttribute("isLoggedIn");
-
                 if (isLoggedIn == null || !isLoggedIn) {
                         return "redirect:/login";
                 }
 
                 String currentEmail = (String) session.getAttribute("userEmail");
-
                 Optional<User> userOptional = userRepository.findByEmail(currentEmail);
-
                 if (userOptional.isEmpty()) {
-
-                        model.addAttribute(
-                                        "error",
-                                        "User tidak ditemukan!");
-
+                        model.addAttribute("error", "User tidak ditemukan!");
                         return "profile-settings";
                 }
 
                 User user = userOptional.get();
-
                 if (!password.isBlank()) {
-
                         if (password.length() < 8) {
-
-                                model.addAttribute(
-                                                "error",
-                                                "Password minimal 8 karakter!");
-
+                                model.addAttribute("error", "Password minimal 8 karakter!");
                                 return "profile-settings";
                         }
 
                         if (!password.equals(confirmPassword)) {
-
-                                model.addAttribute(
-                                                "error",
-                                                "Password dan Confirm Password harus sama!");
-
+                                model.addAttribute("error", "Password dan Confirm Password harus sama!");
                                 return "profile-settings";
                         }
-
                         user.setPassword(password);
                 }
 
                 user.setFullName(fullName);
                 user.setEmail(email);
-
                 userRepository.save(user);
 
-                session.setAttribute(
-                                "userEmail",
-                                email);
-
-                model.addAttribute(
-                                "success",
-                                "Profile updated successfully!");
-
-                model.addAttribute(
-                                "email",
-                                email);
-
-                model.addAttribute(
-                                "fullName",
-                                fullName);
-
+                session.setAttribute("userEmail", email);
+                model.addAttribute("success", "Profile updated successfully!");
+                model.addAttribute("email", email);
+                model.addAttribute("fullName", fullName);
                 return "profile-settings";
         }
 
